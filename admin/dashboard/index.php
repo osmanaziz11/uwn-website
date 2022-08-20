@@ -263,31 +263,6 @@
         }
     }
 
-    //  Video Preview 
-    const readURL_video = (input) => {
-        console.log(input.files[0])
-        var ext = input.files[0]['name'].substring(input.files[0]['name'].lastIndexOf('.') + 1).toLowerCase();
-        if (input.files && input.files[0] && (ext == "mp4")) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                $('.video-cont .video-box span').html('<video src="' + e.target.result +
-                    '" muted autoplay loop/>');
-            }
-            $('.video-cont .video-box span + .loader-circle').removeClass('d-none');
-            setTimeout(() => {
-                $('.video-cont .video-box span + .loader-circle').addClass('d-none');
-                reader.readAsDataURL(input.files[0]);
-            }, 2000);
-        } else {
-            $('.video-cont .video-box').addClass('invalidError');
-            setTimeout(() => {
-                $('.video-cont .video-box').removeClass('invalidError');
-            }, 2000);
-        }
-    }
-
-
-
 
 
     // Hide/Show Sidebar Menu Funtion

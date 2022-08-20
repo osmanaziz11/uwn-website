@@ -135,25 +135,19 @@
     <div class="row custom-h inner-pg">
         <div class="col">
             <div id="inner-pg-container" class="container-fluid p-0 rounded shadow">
-                <form onsubmit="saveChanges(event)">
-                    <div class="row" id="inner-pg-content"></div>
-
-                    <div class="row mt-2">
-                        <!-- Page Button Container  -->
-                        <div class="container-fluid btn-container">
-                            <div class="row">
-                                <div
-                                    class="col-sm-6 mb-sm-0 mb-3 d-flex justify-content-sm-end justify-content-center align-items-center">
-                                    <button class="back-btn rounded" onclick="returnTo()">Back</button>
-                                </div>
-                                <div
-                                    class="col-sm-6 d-flex justify-content-sm-start justify-content-center align-items-center ">
-                                    <button type="submit" class="sve-btn rounded" disabled>Save </button>
-                                </div>
+                <div class="row" id="inner-pg-content"></div>
+                <div class="row mt-2">
+                    <!-- Page Button Container  -->
+                    <div class="container-fluid btn-container">
+                        <div class="row">
+                            <div class="col-sm-12 mb-sm-0 mb-3 d-flex  justify-content-center align-items-center">
+                                <button class="back-btn rounded" onclick="returnTo()">Back</button>
                             </div>
+
                         </div>
                     </div>
-                </form>
+                </div>
+
             </div>
         </div>
     </div>
