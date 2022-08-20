@@ -47,7 +47,7 @@
                                 <div class="transition w-100 h-100 position-absolute"></div>
                                 <img src="assects/img/2.jpg" alt="">
                                 <h6 class="position-absolute">گریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں</h6>
-                                <p>02 August 2022</p>
+                                <p>02 August 2022 dafdsfsdfadsf</p>
                             </div>
                         </div>
                         <div class="col-12 d-flex pe-0 justify-content-end">
