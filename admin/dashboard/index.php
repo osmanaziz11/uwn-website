@@ -198,7 +198,6 @@
     });
     </script>
 
-
     <!-- Jquery Script  -->
     <script src="../assects/Js/jquery.js"></script>
     <!-- Iconify Script  -->
@@ -223,9 +222,6 @@
         $(event).addClass('li-active shadow').siblings().removeClass('li-active shadow');
         if ($(event).attr('data-pge') != 'logout.php') {
             pgeRetrieval($(event).attr('data-pge'), contentDiv);
-            window.history.pushState('object', 'New Title', $(event).attr('href'));
-            //This stops the browser from actually following the link
-            event.preventDefault();
         } else {
             window.open('logout.php', '_self');
         }
@@ -241,29 +237,6 @@
     const getContainer_byClassName = container => {
         return document.getElementsByClassName(container)[0];
     }
-
-    //  Image Preview 
-    const readURL = (input) => {
-        var ext = input.files[0]['name'].substring(input.files[0]['name'].lastIndexOf('.') + 1).toLowerCase();
-        if (input.files && input.files[0] && (ext == "png" || ext == "jpeg" || ext == "jpg")) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                $($(input).attr('data-container')).html('<img src="' + e.target.result + '" onload="" />');
-            }
-            $(`${$(input).attr('data-container')} + .loader-circle`).removeClass('d-none');
-            setTimeout(() => {
-                $(`${$(input).attr('data-container')} + .loader-circle`).addClass('d-none');
-                reader.readAsDataURL(input.files[0]);
-            }, 2000);
-        } else {
-            $($(input).attr('data-container')).addClass('invalidError');
-            setTimeout(() => {
-                $($(input).attr('data-container')).removeClass('invalidError');
-            }, 2000);
-        }
-    }
-
-
 
     // Hide/Show Sidebar Menu Funtion
     function mobileMenu() {
@@ -303,37 +276,6 @@
         }
     }
 
-
-
-
-    // Validation 
-    let isvalid = (regx, username) => {
-        if (regx.test(username)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    // when data form in user profile updated 
-    let updateStatus = status => {
-        setTimeout(() => {
-            $('#user-content-container .update-btn h6').html(status);
-            $('#user-content-container .update-btn h6').show();
-            $('#user-content-container .update-btn .loader-circle').hide();
-        }, 2000, status)
-        $('#user-content-container .update-btn h6').hide();
-        $('#user-content-container .update-btn .loader-circle').show();
-    }
-    // Update Admin Name in Header 
-    let updateHeaderName = value => {
-        document.getElementById('userName-H').innerHTML = value;
-    }
-    // Update Admin Picture in Header 
-    let updateHeaderPic = value => {
-        $('#img-box img').attr('src', value);
-    }
-
     let previewInnerPg = (url, element) => {
         fetch(url)
             .then((response) => {
@@ -342,52 +284,6 @@
             .then((data) => {
                 element.innerHTML = data;
             });
-    }
-
-
-
-    // let profile_update = (event) => {
-    //     event.preventDefault();
-    //     const formData = new FormData(document.getElementById('profileForm'));
-    //     fetch('../PHP/upload-data.php', {
-    //         method: 'post',
-    //         body: formData,
-    //         header: {
-    //             ' Content-Type': 'application/x-www-form-urlencoded'
-    //         }
-    //     }).then(response => response.text()).then(res => {
-    //         console.log(res);
-    //     }).catch(error => {
-    //         console.log(error);
-    //     })
-    // }
-
-    // Profile Image Upload 
-    let profileImg_update = event => {
-        event.preventDefault();
-        const formData = new FormData(document.getElementById('profileImgForm'));
-        setTimeout(() => {
-            $('.card-avatar .loader-circle').addClass('d-none');
-            fetch('../PHP/upload-data.php', {
-                method: 'POST',
-                body: formData,
-                header: {
-                    contentType: false,
-                    processData: false
-                }
-            }).then(resp => resp.text()).then(res => {
-                $('.card-body .upload-btn').prop('disabled', true);
-                $('.card-body .upload-btn').html('Uploaded');
-            }).catch(error => {
-                console.log(error);
-            })
-        }, 2000)
-        $('.card-avatar .loader-circle').removeClass('d-none');
-
-    }
-
-    const removeIMG = () => {
-        $('.card-avatar label img').attr('src', '../assects/Images/admin-profile/uploads/Default.png');
     }
     </script>
 
@@ -398,7 +294,8 @@
         let frontPge = document.getElementById('front-pg');
         let innerPge = document.getElementsByClassName('inner-pg')[0];
         let container = document.getElementById('inner-pg-content');
-        let url = `Inner Pages/${$(event).attr('data-pg')}`
+        let url = `Inner Pages/basePge.php`;
+        // let slug= $(event).attr('data-pg');
         pgeRetrieval(url, container);
         frontPge.classList.add('front-pg-active');
         innerPge.classList.add('inner-pg-active');
@@ -417,21 +314,8 @@
         $(getContainer_byClassName($(event).attr('data-box-id'))).addClass('d-block').siblings().removeClass(
             'd-block')
     }
-
-    // Save Changes 
-    const saveChanges = (event) => {
-        event.preventDefault();
-        $(getContainer_byClassName('sve-btn')).prop('disabled', true);
-    }
     </script>
 
-    <!-- Home-Setting Page Script  -->
-    <script>
-    const squareEvent = event => {
-        $(getContainer_byClassName($(event).attr('id'))).css($(event).attr('name'), $(event).val());
-        $(getContainer_byClassName('sve-btn')).prop('disabled', false);
-    }
-    </script>
 
     <!-- Events Js  -->
     <script>
@@ -512,12 +396,6 @@
     }).catch(error => {
         console.log('Server Error');
     });
-
-    // function showPosition(position) {
-    //     console.log(position.coords.latitude + position.coords.longitude) 
-
-    // }
-    // navigator.geolocation.getCurrentPosition(showPosition);
     </script>
     <!-- Aos on scroll Scrip  -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
