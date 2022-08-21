@@ -2236,6 +2236,14 @@ body {
 .newsContent .approveBox {
   opacity: 0;
   transition: all 0.5s;
+  z-index: 4444;
+  height: 102% !important;
+}
+.title,
+.date {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  line-height: 2.3;
+  font-size: 0.9rem;
 }
 .newsContent .approveBox:hover {
   opacity: 1;
@@ -2244,4 +2252,8 @@ body {
   border: none;
   color: white;
   outline: none;
+}
+#signleNews img {
+  object-fit: contain;
+  object-position: top;
 }

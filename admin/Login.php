@@ -1,6 +1,5 @@
 <?php include_once "server/constants.php"  ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -155,7 +154,7 @@
                     $('.right').removeClass('shadow');
                     $('.right').addClass('valid-error');
                     setTimeout(() => {
-                        window.location.href = 'http://localhost:81/urduworldnews/admin/dashboard/';
+                        window.location.href = 'http://localhost:81/uwn/admin/dashboard/';
                     }, 2000)
                 } else {
                     $('.right').removeClass('shadow');
