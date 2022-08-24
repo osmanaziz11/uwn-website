@@ -205,6 +205,117 @@
 
     <!-- custom Funtion script  -->
     <script>
+    async function FetchNews(attribute) {
+        window.r = attribute;
+        const page = attribute.replace(".php", "");
+        const a = await fetch(`http://127.0.0.1:5000/api/${page}/news`, {
+            method: "GET",
+        })
+        let DataInJSON = await a.json()
+        let gotsingleNews = document.getElementById("singleNews")
+        window.value = DataInJSON.posts;
+        if (DataInJSON.status == 1) {
+            gotsingleNews.innerHTML = "";
+
+            window.value.map((post, index) => {
+                exists(index);
+                gotsingleNews.innerHTML += `<div id = "${index}" class="col-md-3 col-sm-6">
+                        <div class="imgBox rounded shadow position-relative" style="height: 200px;">
+                            <div
+                                class="approveBox w-100 h-100 position-absolute bg-dark top-0 left-0 d-flex justify-content-center align-items-center">
+                                
+
+                                 </div>
+                            <img src=" ${post.thumbnail}" alt="">
+                        </div>
+                        <p> ${post.title} </p>
+                        <a href = "${post.articleLink}"> <p> Go to main-link </p> </a>
+                        <p> ${post.publishedAt} </p> 
+                    </div> `
+            })
+        } else {}
+
+    }
+
+    // async function insertIntoDB(ind) {
+    //     // let toSendDB= window.value[a];
+    //      const resp = await fetch(`http://localhost/UWN/admin/server/api/insert/${window.r}`, {
+    //         method: "POST",
+    //          headers: {
+    //              'Content-Type': 'application/json',
+    //           },
+    //         data: window.value[ind]
+    //      })
+    //     let injson = await resp.json();
+    //     const statuss = injson.status;
+    //     return statuss;
+    // }
+
+    // function checkStatus (v) {
+    //          // check status === 1
+    //          if (v == 1) {
+
+    //             let clickedBox = document.getElementById(a)
+    //             clickedBox.classList.add("d-none");
+
+    //         }
+    //     }
+
+    //    function Execute(a){
+    //          // sending data into DATABASE
+    //          const s =  insertIntoDB(a);
+
+    //          // check if data is sent into DB or not
+    //           checkStatus(s); 
+    //     }
+
+    async function exists(a) {
+        let artLink = window.value[a].articleLink;
+        let artikey = artLink.slice(-8); // getting the last 8 digits of articllink
+        const resp = await fetch(`http://localhost/UWM/admin/server/api/exist/${window.r}`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                "slug": artikey
+            }),
+        })
+
+        let injson = await resp.json();
+        const statuss = injson.status;
+        const container = document.getElementById(a);
+        const gotApprove = container.querySelectorAll(".approveBox")[0];
+
+
+        if (statuss == 1) {
+            // call del
+            gotApprove.innerHTML = `<button onclick="delete(${a})" class="btn btn-danger"> Delete </button>`
+        } else if (statuss == 0)
+        // call approve
+        {
+            gotApprove.innerHTML = `<button onclick="Execute(${a})" class="btn btn-primary"> Approve </button>`
+        }
+    }
+
+    // function delete(a) {
+    //     let artLink = window.value[a].articleLink;
+    //      let artikey = artLink.slice(-8); // getting the last 8 digits of articllink
+    //      const resp = await fetch(`http://localhost/UWN/admin/server/api/exist/${window.r}`, {
+    //             method: "POST",
+    //              headers: {
+    //                  'Content-Type': 'application/json',
+    //               },
+    //             data: artikey
+    //          })
+
+    //          let injson = await resp.json();
+    //          const statuss = injson.status;    
+
+    //             checkStatus(statuss);
+
+    // }
+
     // Page Retreivel
     let pgeRetrieval = (url, container) => {
         fetch(url)
@@ -294,11 +405,15 @@
         let frontPge = document.getElementById('front-pg');
         let innerPge = document.getElementsByClassName('inner-pg')[0];
         let container = document.getElementById('inner-pg-content');
-        let url = `Inner Pages/basePge.php`;
-        // let slug= $(event).attr('data-pg');
+        let url = `Inner Pages/${$(event).attr('data-pg')}`
+
+        let datapgAttribute = $(event).attr('data-pg');
+        FetchNews(datapgAttribute);
         pgeRetrieval(url, container);
+
         frontPge.classList.add('front-pg-active');
         innerPge.classList.add('inner-pg-active');
+
     };
 
     // Return To 
@@ -383,7 +498,7 @@
             )
             .then(weaRes => weaRes.json()).then(res => {
                 $('#weather-container .loader-circle').addClass('d-none');
-                console.log('Iam in');
+                // console.log('Iam in');
                 tempBox.innerText = `${Math.floor(res.main.temp)}\xB0C`;
                 descBox.innerHTML = capitalizeFirstLetter(res.weather[0].description);
                 cityBox.innerText = response.city;
