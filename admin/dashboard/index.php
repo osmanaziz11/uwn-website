@@ -210,7 +210,7 @@
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 
     <script>
-    const baseURL = 'http://localhost:81/uwn/admin/';
+    const baseURL = 'http://localhost/UWM/admin/';
     </script>
 
     <!-- Script Written by Collaborator (Hadees) -->
@@ -310,7 +310,7 @@
         }
     }
 
-    // // check if article is already in DB
+    // check if article is already in DB
     async function exists(a) {
         let artLink = window.value[a].articleLink;
         let artikey = artLink.slice(-8); // getting the last 8 digits of articllink
@@ -338,8 +338,6 @@
         }
     }
     </script>
-
-
 
     <!--******** WARNING: This is written previosly ********** -->
     <!-- custom Funtion script  -->
