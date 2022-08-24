@@ -297,7 +297,7 @@
             gotApprove.innerHTML = `<button onclick="Execute(${a})" class="btn btn-primary"> Approve </button>`
         }
     }
-
+    //asdffdfs
     // function delete(a) {
     //     let artLink = window.value[a].articleLink;
     //      let artikey = artLink.slice(-8); // getting the last 8 digits of articllink
