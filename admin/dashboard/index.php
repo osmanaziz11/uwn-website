@@ -282,7 +282,6 @@
         const statuss = injson.status;
         const container = document.getElementById(a);
         const gotApprove = container.querySelectorAll(".approveBox")[0];
-        // console.log('exists bhai');
         if (statuss == 1) {
             gotApprove.innerHTML = `<button onclick="delete(${a})" class="btn btn-danger"> Delete </button>`
         } else if (statuss == 0) {
@@ -290,21 +289,22 @@
         }
     }
 
-    // function delete(a) {
-    //     let artLink = window.value[a].articleLink;
-    //     let artikey = artLink.slice(-8); // getting the last 8 digits of articl-link
-    //     const resp = await fetch(`http://localhost/UWM/admin/server/api/delete/${window.r}`, {
-    //         method: "POST",
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         data: artikey
-    //     })
-    //     let injson = await resp.json();
-    //     const statuss = injson.status;
-    //     // check status if status is 1, delete the news from the the dashboard
-    //     checkStatus(statuss);
-    // }
+    function delete(a) {
+        let artLink = window.value[a].articleLink;
+        let artikey = artLink.slice(-8); // getting the last 8 digits of articl-link
+        console.log();
+        const resp = await fetch(`http://localhost/UWM/admin/server/api/delete/${window.r}`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            data: artikey
+        })
+        let injson = await resp.json();
+        const statuss = injson.status;
+        // check status if status is 1, delete the news from the the dashboard
+        checkStatus(statuss);
+    }
 
     // Page Retreivel
     let pgeRetrieval = (url, container) => {
