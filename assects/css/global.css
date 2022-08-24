@@ -1,10 +1,3 @@
-/* @font-face {
-  font-family: 'farsi_unicoderegular';
-  src: url('farsi_unicode-webfont.woff2') format('woff2'),
-    url('farsi_unicode-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-} */
 * {
   margin: 0;
   padding: 0;
@@ -62,6 +55,9 @@ img {
   height: 100%;
   outline: none;
   padding: 2px;
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
   color: rgb(173, 174, 173);
 }
 .search .iconify {
@@ -104,20 +100,40 @@ img {
   width: 97.8%;
   height: 400px;
 }
+.__slider {
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+.img_gradient {
+  z-index: 50;
+  background: linear-gradient(rgb(63 63 63 / 25%), rgba(0, 0, 0, 0.7));
+}
+.active_slide {
+  opacity: 1 !important;
+  z-index: 1 !important;
+}
+.desc_container {
+  bottom: 0%;
+  z-index: 444;
+}
 .slides img {
   object-fit: cover;
 }
-.slides h1 {
+.__slider h1 {
   color: white;
   direction: rtl;
-  z-index: 4;
+  z-index: 4333;
   font-family: 'Noto Nastaliq Urdu', serif;
   bottom: 10%;
+  line-height: 43px;
   right: 10px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   max-width: 600px;
 }
-.slides p {
+.__slider p {
   z-index: 4;
   right: 10px;
 }
@@ -180,7 +196,7 @@ img {
 
 .transition {
   z-index: 3;
-  background: linear-gradient(rgba(63, 63, 63, 0.25), rgba(0, 0, 0, 0.2));
+  background: linear-gradient(rgba(63, 63, 63, 0.25), rgba(0, 0, 0, 0.5));
 }
 
 #advertisement_container {

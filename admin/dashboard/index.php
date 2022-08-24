@@ -290,13 +290,54 @@
 
     <!-- Pages Funtion Script  -->
     <script>
+    const approveNews = (item) => {
+
+    }
+    const FetchNews = async (slug) => {
+        const news = await fetch(`http://127.0.0.1:5000/api/${slug}/news`);
+        const data = await news.json();
+        const element = document.getElementById('singleNews');
+        document.getElementById('page-title').innerHTML = slug;
+        if (data.status == 1) {
+            element.innerHTML = "";
+            data.posts.map((item, index) => {
+
+                element.innerHTML += ` <div id="${index}" class="col-md-3 col-sm-6 mb-3">
+                        <div class="shadow rounded">
+                            <div class=" imgBox rounded shadow position-relative" style="height: 200px;">
+                                <img src="${item.thumbnail}" alt="" class="w-100 h-100">
+                                <div
+                                    class="approveBox w-100 position-absolute bg-dark top-0 left-0 d-flex justify-content-center align-items-center">
+                                    <button class="btn btn-primary" onclick="approveNews(${index})">Approve</button> 
+                                </div>
+
+                            </div>
+                            <p dir="rtl" class="m-0 my-2 px-1 title">${item.title}
+                            </p>
+                            <div class="container-fluid p-0">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="m-0 p-0 p-2 date">${item.publishedAt}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="${item.articleLink}">
+                                            <p class="m-0 p-0 text-end p-2">Main article</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+            })
+        }
+    }
     // Page Setting Navigator 
     const pgeSetting_Navigator = event => {
         let frontPge = document.getElementById('front-pg');
         let innerPge = document.getElementsByClassName('inner-pg')[0];
         let container = document.getElementById('inner-pg-content');
         let url = `Inner Pages/basePge.php`;
-        // let slug= $(event).attr('data-pg');
+        FetchNews($(event).attr('data-pg'));
         pgeRetrieval(url, container);
         frontPge.classList.add('front-pg-active');
         innerPge.classList.add('inner-pg-active');

@@ -18,7 +18,7 @@
                         <li></li>
                     </ul>
                 </div>
-                <h6 class="mb-4">Home</h6> <button class="edit-btn" data-pg="home.php"
+                <h6 class="mb-4">Home</h6> <button class="edit-btn" data-pg="home"
                     onclick='pgeSetting_Navigator(this)'>Edit</button>
             </div>
 
@@ -40,7 +40,7 @@
                     </ul>
                 </div>
 
-                <h6 class="mb-4">International</h6> <button class="edit-btn" data-pg="international.php"
+                <h6 class="mb-4">International</h6> <button class="edit-btn" data-pg="international"
                     onclick='pgeSetting_Navigator(this)'>Edit</button>
 
 
@@ -62,7 +62,7 @@
                         <li></li>
                     </ul>
                 </div>
-                <h6 class="mb-4">Pakitan</h6> <button class="edit-btn" data-pg="pakistan.php"
+                <h6 class="mb-4">Pakitan</h6> <button class="edit-btn" data-pg="pakistan"
                     onclick='pgeSetting_Navigator(this)'>Edit</button>
             </div>
         </div>
@@ -84,7 +84,7 @@
                         <li></li>
                     </ul>
                 </div>
-                <h6 class="mb-4">Sports</h6> <button class="edit-btn" data-pg="sports.php"
+                <h6 class="mb-4">Sports</h6> <button class="edit-btn" data-pg="sports"
                     onclick='pgeSetting_Navigator(this)'>Edit</button>
             </div>
         </div>
@@ -104,7 +104,7 @@
                         <li></li>
                     </ul>
                 </div>
-                <h6 class="mb-4">Artist</h6><button class="edit-btn" data-pg="artist.php"
+                <h6 class="mb-4">Artist</h6><button class="edit-btn" data-pg="artist"
                     onclick='pgeSetting_Navigator(this)'>Edit</button>
             </div>
         </div>
@@ -124,7 +124,7 @@
                         <li></li>
                     </ul>
                 </div>
-                <h6 class="mb-4">Immegration</h6><button class="edit-btn" data-pg="immegration.php"
+                <h6 class="mb-4">Immegration</h6><button class="edit-btn" data-pg="immegration"
                     onclick='pgeSetting_Navigator(this)'>Edit</button>
             </div>
         </div>
