@@ -435,8 +435,7 @@
         let container = document.getElementById('inner-pg-content');
         let whichPge = $(event).attr('data-pg');
         let url = (whichPge === 'immegration') ? `Inner Pages/immegration.php` : `Inner Pages/basePge.php`
-        FetchNews($(event).attr('data-pg'));;
-
+        FetchNews(whichPge);
         pgeRetrieval(url, container);
         frontPge.classList.add('front-pg-active');
         innerPge.classList.add('inner-pg-active');
