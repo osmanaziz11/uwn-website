@@ -65,46 +65,46 @@
             <div class="col-md-8 ps-md-0 ps-2 d-flex justify-content-md-start justify-content-center">
                 <div class="slider_container position-relative">
                     <!-- Default Slide  -->
-                    <a href="">
-                        <div class="__slider w-100 h-100 position-absolute top-0 active_slide">
-                            <div class="w-100 h-100 position-absolute top-0 img_gradient"></div>
-                            <img src="assects/img/1.jpg" class="w-100 h-100" alt="">
-                            <div dir="rtl" class="desc_container position-absolute bottom-0 end-0 px-3">
-                                <h1 class="">انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں، جملے ہوں، متن
-                                    ہوں یا یہاں تک کہ آپ کی ویب سائٹ کے صفحات بھی بہترین
-                                    پیش کریں گے۔</h1>
-                                <p class="text-white">02 August 2022</p>
-                            </div>
+
+                    <div id="0" class="__slider w-100 h-100 position-absolute top-0 active_slide">
+                        <div class="w-100 h-100 position-absolute top-0 img_gradient"></div>
+                        <img src="assects/img/1.jpg" class="w-100 h-100" alt="">
+                        <div dir="rtl" class="desc_container position-absolute bottom-0 end-0 px-3">
+                            <h1 class="">انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں، جملے ہوں، متن
+                                ہوں یا یہاں تک کہ آپ کی ویب سائٹ کے صفحات بھی بہترین
+                                پیش کریں گے۔</h1>
+                            <p class="text-white">02 August 2022</p>
                         </div>
-                    </a>
+                    </div>
+
                     <!-- Slide 1  -->
-                    <div class="__slider w-100 h-100 position-absolute top-0 ">
+                    <div id="1" class="__slider w-100 h-100 position-absolute top-0 ">
                         <div class="w-100 h-100 position-absolute top-0 img_gradient"></div>
                         <img src="assects/img/1.jpg" class="w-100 h-100" alt="">
                         <div dir="rtl" class="desc_container position-absolute bottom-0 end-0 px-3">
                             <h1 class="">انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوئٹ کے صفحات بھی بہترین
                                 پیش کریں گے۔</h1>
-                            <p class="text-white">02 August </p>
+                            <p class="text-white">02 August 2023</p>
                         </div>
                     </div>
                     <!-- Slide 2  -->
-                    <div class="__slider w-100 h-100 position-absolute top-0 ">
+                    <div id="2" class="__slider w-100 h-100 position-absolute top-0 ">
                         <div class="w-100 h-100 position-absolute top-0 img_gradient"></div>
                         <img src="assects/img/1.jpg" class="w-100 h-100" alt="">
                         <div dir="rtl" class="desc_container position-absolute bottom-0 end-0 px-3">
                             <h1 class="">انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوئٹ کے صفحات بھی بہترین
                                 پیش کریں گے۔</h1>
-                            <p class="text-white">02 August </p>
+                            <p class="text-white">02 August 2024</p>
                         </div>
                     </div>
                     <!-- Slide 3  -->
-                    <div class="__slider w-100 h-100 position-absolute top-0 ">
+                    <div id="3" class="__slider w-100 h-100 position-absolute top-0 ">
                         <div class="w-100 h-100 position-absolute top-0 img_gradient"></div>
                         <img src="assects/img/1.jpg" class="w-100 h-100" alt="">
                         <div dir="rtl" class="desc_container position-absolute bottom-0 end-0 px-3">
                             <h1 class="">انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوئٹ کے صفحات بھی بہترین
                                 پیش کریں گے۔</h1>
-                            <p class="text-white">02 August </p>
+                            <p class="text-white">02 August 2025</p>
                         </div>
                     </div>
 
@@ -405,21 +405,21 @@
     <!-- Footer  -->
     <?php require_once "components/footer.php"; ?>
     <!-- Footer end -->
+
     <script src="assects/Js/jquery.js"></script>
     <script>
     let children = $(".slider_container").children().length;
-    console.log(children);
-    // count = 0;
-    // setTimeout(() => {
-
-    //     if (children > 1) {
-    //         count = (count == children) ? 1 : count++;
-    //         $(document.getElementById(count)).addClass('active-slide').siblings().removeClass(
-    //             'acive-slide');
-    //     }
-
-    // }, 3000);
+    count = -1;
+    setInterval(() => {
+        console.log(`object`);
+        if (children > 1) {
+            count = (count == children - 1) ? 1 : count = count + 1;
+            $(document.getElementById(count)).addClass('active_slide').siblings().removeClass('active_slide')
+        }
+    }, 3000);
     </script>
 </body>
+
+
 
 </html>
