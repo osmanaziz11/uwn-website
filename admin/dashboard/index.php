@@ -61,6 +61,11 @@
                     <h6>Pages</h6>
                 </li>
 
+                <li data-pge="categories.php" onclick='navigator(this)' class="rounded "><span class="iconify "
+                        data-icon="clarity:copy-solid" style="color: white;" data-flip="horizontal"></span>
+                    <h6>Categories</h6>
+                </li>
+
                 <li class="rounded" data-pge="logout.php" onclick='navigator(this)'><span class="iconify "
                         data-icon="ri:logout-circle-fill" style="color: white;"></span>
                     <h6>Logout</h6>
@@ -428,8 +433,10 @@
         let frontPge = document.getElementById('front-pg');
         let innerPge = document.getElementsByClassName('inner-pg')[0];
         let container = document.getElementById('inner-pg-content');
-        let url = `Inner Pages/basePge.php`;
-        FetchNews($(event).attr('data-pg'));
+        let whichPge = $(event).attr('data-pg');
+        let url = (whichPge === 'immegration') ? `Inner Pages/immegration.php` : `Inner Pages/basePge.php`
+        FetchNews($(event).attr('data-pg'));;
+
         pgeRetrieval(url, container);
         frontPge.classList.add('front-pg-active');
         innerPge.classList.add('inner-pg-active');
