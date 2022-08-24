@@ -255,7 +255,7 @@
     }
 
     // when approve button is clicked
-    function Execute(a) {
+    function approve(a) {
         // sending data into DATABASE
         const s = insertIntoDB(a);
         // check if data is successfully inserted into DB or not
@@ -283,24 +283,23 @@
         const container = document.getElementById(a);
         const gotApprove = container.querySelectorAll(".approveBox")[0];
         // console.log('exists bhai');
-        // if (statuss == 1) {
-        //     gotApprove.innerHTML = `<button onclick="delete(${a})" class="btn btn-danger"> Delete </button>`
-        // } else if (statuss == 0) {
-        gotApprove.innerHTML = `<button onclick="Execute(${a})" class="btn btn-primary"> Approve </button>`
-        // }e
+        if (statuss == 1) {
+            gotApprove.innerHTML = `<button onclick="delete(${a})" class="btn btn-danger"> Delete </button>`
+        } else if (statuss == 0) {
+            gotApprove.innerHTML = `<button onclick="approve(${a})" class="btn btn-primary"> Approve </button>`
+        }
     }
 
     // function delete(a) {
     //     let artLink = window.value[a].articleLink;
     //     let artikey = artLink.slice(-8); // getting the last 8 digits of articl-link
-    //     const resp = await fetch(`http://localhost/UWM/admin/server/api/exist/${window.r}`, {
+    //     const resp = await fetch(`http://localhost/UWM/admin/server/api/delete/${window.r}`, {
     //         method: "POST",
     //         headers: {
     //             'Content-Type': 'application/json',
     //         },
     //         data: artikey
     //     })
-
     //     let injson = await resp.json();
     //     const statuss = injson.status;
     //     // check status if status is 1, delete the news from the the dashboard

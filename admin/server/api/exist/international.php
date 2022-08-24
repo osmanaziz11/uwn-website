@@ -23,7 +23,6 @@ $slug=$data['slug'];
         else {
               echo json_encode(array('record'=>'','status'=>0));
         }
-      
     } catch (PDOException $exc) {
     echo json_encode(array('record'=>'','status'=>403));
     }
