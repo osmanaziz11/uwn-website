@@ -15,7 +15,7 @@ $data=json_decode(file_get_contents("php://input"),true);
 $slug=$data['slug'];
 
  try {
-        $sql = $conn->prepare("DELETE FROM `international_news` WHERE `internationla_news`.`slug` = '$slug';");
+        $sql = $conn->prepare("DELETE FROM `international_news` WHERE `international_news`.`slug` = '$slug';");
         $sql->execute();
             echo json_encode(array('record'=>"",'status'=>1));
         } 
