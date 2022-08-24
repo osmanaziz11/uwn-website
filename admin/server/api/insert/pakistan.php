@@ -9,7 +9,7 @@
 // "title": "’سب پاکستان سے چلے جائیں گے تو یہاں تبدیلی کون لائے گا‘"
 // }
 
-include '../db-config.php';
+include '../../db-config.php';
 
 // Defined headers 
 header("Access-Control-Allow-Origin: *");

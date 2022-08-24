@@ -9,7 +9,7 @@
 // "title": "’سب پاکستان سے چلے جائیں گے تو یہاں تبدیلی کون لائے گا‘"
 // }
 
-include '../db-config.php';
+include '../../db-config.php';
 
 // Defined headers 
 header("Access-Control-Allow-Origin: *");
@@ -28,9 +28,9 @@ $title=$data['title'];
         $sqlQuery = "INSERT INTO artist_news (slug,articleLink,publishedAt,thumbnail,title) Values(:slug,:link,:date,:image,:title)";
         $sql = $conn->prepare($sqlQuery);
         $sql->execute([':slug'=>$slug,':link'=>$link,':date'=>$date,':image'=>$image,':title'=>$title]);
-        echo json_encode(array('record'=>'','status'=>1));
+        echo json_encode(array('status'=>1));
    } catch (Exception $exc) {
-        echo json_encode(array('result'=>'','status'=>0));
+        echo json_encode(array('status'=>0));
    }
 
 ?>

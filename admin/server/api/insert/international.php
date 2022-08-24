@@ -9,7 +9,7 @@
 // "title": "’سب پاکستان سے چلے جائیں گے تو یہاں تبدیلی کون لائے گا‘"
 // }
 
-include '../db-config.php';
+include '../../db-config.php';
 
 // Defined headers 
 header("Access-Control-Allow-Origin: *");
@@ -18,11 +18,11 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 $data=json_decode(file_get_contents("php://input"),true);
-$slug=$data['slug'];
 $link=$data['articleLink'];
 $date=$data['publishedAt'];
 $image=$data['thumbnail'];
 $title=$data['title'];
+$slug=$data['slug'];
 
  try {
         $sqlQuery = "INSERT INTO international_news (slug,articleLink,publishedAt,thumbnail,title) Values(:slug,:link,:date,:image,:title)";

@@ -1,6 +1,6 @@
 <?php
 
-include '../db-config.php';
+include '../../db-config.php';
 
 // Defined headers 
 header("Access-Control-Allow-Origin: *");
@@ -17,15 +17,15 @@ $slug=$data['slug'];
         $result = $sql->fetch(PDO::FETCH_ASSOC);
       //   if user exist create session
             if (is_countable($result) && count($result) > 0) {
-            echo json_encode(array('record'=>$result,'status'=>1));
+            echo json_encode(array('status'=>1));
         } 
       //   if not send response to 0
         else {
-              echo json_encode(array('record'=>'','status'=>0));
+              echo json_encode(array('status'=>0));
         }
       
     } catch (PDOException $exc) {
-    echo json_encode(array('record'=>'','status'=>403));
+    echo json_encode(array('status'=>403));
     }
 
 ?>

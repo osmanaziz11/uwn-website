@@ -4,7 +4,7 @@
             <div class="container-fluid px-md-3 px-4 mt-2 newsContent" style="height: 400px;">
                 <div class="row">
                     <div class="col">
-                        <h4 id="page-title">Pakistan News</h4>
+                        <h4 id="page-title"></h4>
                     </div>
                 </div>
                 <div id="singleNews" class="row">
@@ -17,11 +17,15 @@
                         </div>
                     </div>
                     <!-- Loader Ends  -->
+                    <!-- Single News  -->
 
-
-
+                    <!-- Single News Ends -->
                 </div>
+
+
+
             </div>
         </div>
     </div>
+</div>
 </div>

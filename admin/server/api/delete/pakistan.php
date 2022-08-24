@@ -3,7 +3,7 @@
 // {
 //     "slug":""
 // }
-include '../db-config.php';
+include '../../db-config.php';
 
 // Defined headers 
 header("Access-Control-Allow-Origin: *");

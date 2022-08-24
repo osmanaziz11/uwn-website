@@ -204,18 +204,139 @@
     <!-- Iconify Script  -->
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 
-    <!-- Script By Collaborator (Hadees)  -->
     <script>
+    const baseURL = 'http://localhost:81/uwn/admin/';
+    </script>
 
+    <!-- Script Written by Collaborator (Hadees) -->
+    <script>
+    async function FetchNews(attribute) {
+        window.r = attribute; // clicked page name
+        const page = attribute.replace(".php", "");
 
+        const a = await fetch(`http://127.0.0.1:5000/api/${page}/news`, {
+            method: "GET",
+        })
+        let DataInJSON = await a.json()
+        let gotsingleNews = document.getElementById("singleNews")
+        document.getElementById("page-title").innerHTML = `${page} News`
+        window.value = DataInJSON.posts;
+        if (DataInJSON.status == 1) {
+            gotsingleNews.innerHTML = "";
+            window.value.map((post, index) => {
+                exists(index);
+                gotsingleNews.innerHTML += `<div id="${index}" class="col-md-3 col-sm-6 mb-3">
+                        <div class="shadow rounded">
+                            <div class=" imgBox rounded shadow position-relative" style="height: 200px;">
+                                <img src="${post.thumbnail}" alt="" class="w-100 h-100">
+                                <div
+                                    class="approveBox w-100 position-absolute bg-dark top-0 left-0 d-flex justify-content-center align-items-center">
+                                  
+                                </div>
+                            </div>
+                            <p dir="rtl" class="m-0 my-2 px-1 title">${post.title}
+                            </p>
+                            <div class="container-fluid p-0">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="m-0 p-0 p-2 date">${post.publishedAt}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="${post.articleLink}">
+                                            <p class="m-0 p-0 text-end p-2">Main article</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
 
+                        </div>
+
+                    </div>`
+            })
+        } else {}
+    }
+    // inserting approved article into DB 
+    async function insertIntoDB(ind) {
+        // api sending article into database
+        let url = window.value[ind].articleLink;
+        let slug = url.slice(-8);
+        window.value[ind]['slug'] = slug;
+        const resp = await fetch(`${baseURL}server/api/insert/${window.r}.php`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(window.value[ind])
+        })
+        let injson = await resp.json();
+        const statuss = injson.status;
+        return statuss;
+    }
+
+    // when approve button is clicked
+    async function Execute(a) {
+        // sending data into DATABASE
+        const s = await insertIntoDB(a);
+        console.log(s);
+        // check if data is successfully inserted into DB or not
+        if (s == 1) {
+            document.getElementById(a).classList.add('d-none')
+        }
+    }
+
+    async function deleteFromDB(a) {
+        let artLink = window.value[a].articleLink;
+        let artikey = artLink.slice(-8); // getting the last 8 digits of articl-link
+        const resp = await fetch(`${baseURL}server/api/delete/${window.r}.php`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                "slug": artikey
+            }),
+        })
+
+        let injson = await resp.json();
+        const statuss = injson.status;
+        // check status if status is 1, delete the news from the the dashboard
+        if (statuss == 1) {
+            document.getElementById(a).classList.add("d-none");
+        }
+    }
+
+    // // check if article is already in DB
+    async function exists(a) {
+        let artLink = window.value[a].articleLink;
+        let artikey = artLink.slice(-8); // getting the last 8 digits of articllink
+
+        // api checking fro existense in database
+        const resp = await fetch(`${baseURL}server/api/exist/${window.r}.php`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                "slug": artikey
+            }),
+        })
+
+        let injson = await resp.json();
+        const statuss = injson.status;
+        const container = document.getElementById(a);
+        const gotApprove = container.querySelectorAll(".approveBox")[0];
+
+        if (statuss == 1) {
+            gotApprove.innerHTML = `<button onclick="deleteFromDB(${a})" class="btn btn-danger"> Delete </button>`
+        } else if (statuss == 0) {
+            gotApprove.innerHTML = `<button onclick="Execute(${a})" class="btn btn-primary"> Approve </button>`
+        }
+    }
     </script>
 
 
 
-
-
-
+    <!--******** WARNING: This is written previosly ********** -->
     <!-- custom Funtion script  -->
     <script>
     // Page Retreivel
