@@ -50,6 +50,10 @@
     <?php require_once "components/footer.php"; ?>
     <!-- Footer end -->
 
+
+
+
+
     <!-- this one -->
     <script>
     async function displayNews() {
@@ -63,7 +67,7 @@
             gotD.innerHTML +=
                 `<div class = "col-md-3 col-sm-6">
                 <div class = "imgBox rounded shadow">
-                     <img src = "${post.thumbnail}" alt = "" >
+                     <img src = "${post.thumbnail}" alt = "       " >
                 </div>
                  <p> ${post.title} </p>
                  <P> ${post.publishedAt}</p>
