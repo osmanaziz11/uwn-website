@@ -54,7 +54,7 @@
     <!-- Footer end -->
 
     <script>
-    const url = window.location.pathname.slice(5);
+    const url = 'international.php';
     displayNews(url);
     </script>
 </body>

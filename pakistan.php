@@ -55,8 +55,8 @@
     <!-- Footer end -->
 
     <script>
-    const url = window.location.pathname.slice(5);
-    displayNews();
+    const url = 'pakistan.php';
+    displayNews(url);
     </script>
 
 </body>
