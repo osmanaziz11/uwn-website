@@ -14,7 +14,7 @@ body {
 #sidebar-container {
   width: 250px;
   height: 100%;
-  background-image: url(../../../Images/sidebar-img/sidebar-2-L.jpg);
+  /* background-image: url(../../../Images/sidebar-img/sidebar-2-L.jpg); */
   position: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -931,19 +931,34 @@ body {
   padding-left: 4px;
 }
 
-#inner-pg-container .preview-container .video-cont {
+#inner-pg-container .preview-container .upload-cont {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   display: none;
 }
+#inner-pg-container .preview-container .content-cont {
+  display: none;
+}
 
-#inner-pg-container .preview-container .video-cont .upload-box {
+#inner-pg-container .preview-container .upload-cont .upload-box {
   height: 216px;
   width: 240px;
   border: 2px dotted black;
 }
+#inner-pg-container .preview-container .upload-cont .media-cont {
+  height: 216px;
+  width: 240px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: rgb(25, 25, 25);
+}
+#inner-pg-container .preview-container .upload-cont .media-cont img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-#inner-pg-container .preview-container .video-cont .video-box {
+#inner-pg-container .preview-container .upload-cont .video-box {
   height: 216px;
   width: 240px;
   background-color: #282a30;
@@ -962,19 +977,19 @@ body {
   transition: all 0.5s;
 }
 
-#inner-pg-container .preview-container .video-cont .video-box .loader-circle {
+#inner-pg-container .preview-container .upload-cont .video-box .loader-circle {
   width: 50px;
   height: 50px;
   position: absolute;
   border: 3px solid transparent;
 }
 
-#inner-pg-container .preview-container .video-cont .video-box span {
+#inner-pg-container .preview-container .upload-cont .video-box span {
   width: 100%;
   height: 100%;
 }
 
-#inner-pg-container .preview-container .video-cont .video-box span video {
+#inner-pg-container .preview-container .upload-cont .video-box span video {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -982,7 +997,7 @@ body {
   outline: none;
 }
 
-#inner-pg-container .preview-container .video-cont .iconify {
+#inner-pg-container .preview-container .upload-cont .iconify {
   -webkit-transform: scale(3) !important;
   transform: scale(3) !important;
   -webkit-transition: all 0.5s !important;
@@ -991,7 +1006,7 @@ body {
   background: none !important;
 }
 
-#inner-pg-container .preview-container .video-cont .iconify:hover {
+#inner-pg-container .preview-container .upload-cont .iconify:hover {
   -webkit-transform: scale(5) !important;
   transform: scale(5) !important;
 }
