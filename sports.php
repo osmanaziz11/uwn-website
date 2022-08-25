@@ -31,34 +31,16 @@
     <!-- Header end -->
 
     <section>
-        <div class="container-fluid px-md-5 px-4 mt-5">
-
-            <div class="row related_news">
-                <div class="col-md-3 col-sm-6">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores!</p>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores!</p>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores!</p>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores!</p>
+        <div dir="rtl" id="newscontainer" class="row related_news">
+            <!-- Loader  -->
+            <div class="col-12 position-relative w-100 h-100 bg-black d-flex justify-content-center align-items-center"
+                style="height: 400px !important;">
+                <div class="loader-circle"
+                    style="position: absolute;height: 50px;width: 50px;border-left-color: #292a30;border: 2px solid snow;">
                 </div>
             </div>
+            <!-- Loader Ends  -->
+        </div>
         </div>
     </section>
 
