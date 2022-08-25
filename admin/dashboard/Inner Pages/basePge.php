@@ -8,7 +8,6 @@
                     </div>
                 </div>
                 <div id="singleNews" class="row">
-
                     <!-- Loader  -->
                     <div class="col-12 w-100 h-100 bg-black d-flex justify-content-center align-items-center"
                         style="height: 400px !important;">
@@ -17,9 +16,6 @@
                         </div>
                     </div>
                     <!-- Loader Ends  -->
-                    <!-- Single News  -->
-
-                    <!-- Single News Ends -->
                 </div>
 
 
