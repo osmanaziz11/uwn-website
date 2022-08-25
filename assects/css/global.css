@@ -55,7 +55,7 @@ img {
   height: 100%;
   outline: none;
   padding: 2px;
-  font-family: 'Noto Nastaliq Urdu', serif;
+  font-family: "Noto Nastaliq Urdu", serif;
   font-size: 0.8rem;
   letter-spacing: 1px;
   color: rgb(173, 174, 173);
@@ -126,7 +126,7 @@ img {
   color: white;
   direction: rtl;
   z-index: 4333;
-  font-family: 'Noto Nastaliq Urdu', serif;
+  font-family: "Noto Nastaliq Urdu", serif;
   bottom: 10%;
   line-height: 43px;
   right: 10px;
@@ -215,4 +215,12 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.loader-circle {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 64px;
+  left: 64px;
+  border: 3px solid transparent;
 }

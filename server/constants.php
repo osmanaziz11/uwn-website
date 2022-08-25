@@ -1,1 +1,1 @@
-<?php define("hostname",'http://localhost:81/uwn/admin/')   ?>
+<?php define("hostname",'http://localhost/UWM/admin/')   ?>
