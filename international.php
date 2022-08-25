@@ -35,12 +35,12 @@
 
             <div dir="rtl" id="newscontainer" class="row related_news">
                 <!-- Loader  -->
-                <!-- <div class="col-12 w-100 h-100 bg-black d-flex justify-content-center align-items-center"
+                <div class="col-12 w-100 h-100 bg-black d-flex justify-content-center align-items-center"
                     style="height: 400px !important;">
                     <div class="loader-circle"
                         style="position: absolute;height: 50px;width: 50px;border-left-color: #292a30;border: 2px solid snow;">
                     </div>
-                </div> -->
+                </div>
                 <!-- Loader Ends  -->
             </div>
         </div>
@@ -50,11 +50,6 @@
     <?php require_once "components/footer.php"; ?>
     <!-- Footer end -->
 
-
-
-
-
-    <!-- this one -->
     <script>
     async function displayNews() {
         const a = await fetch(`http://localhost/UWM/server/api/international.php`, {
@@ -67,7 +62,7 @@
             gotD.innerHTML +=
                 `<div class = "col-md-3 col-sm-6">
                 <div class = "imgBox rounded shadow">
-                     <img src = "${post.thumbnail}" alt = "       " >
+                     <img src = "${post.thumbnail}" alt = "">
                 </div>
                  <p> ${post.title} </p>
                  <P> ${post.publishedAt}</p>
@@ -76,7 +71,6 @@
     }
     displayNews();
     </script>
-
 </body>
 
 </html>
