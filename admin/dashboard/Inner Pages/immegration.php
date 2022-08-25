@@ -31,9 +31,11 @@
                     </div>
                 </div>
                 <div class="col-md-6 d-flex justify-content-md-start justify-content-center">
-                    <div id="imgContainer" class="media-cont shadow">
+                    <div id="" class="media-cont shadow d-flex justify-content-center align-items-center">
+                        <span id="imgContainer" class="w-100 h-100">
 
-                        <div class="loader-circle"></div>
+                        </span>
+                        <div class="loader-circle d-none"></div>
                     </div>
                 </div>
             </div>
@@ -41,10 +43,11 @@
 
         <!-- Content Box  -->
         <div class="container-fluid content-cont">
-            <div class="row">
-                <div class="col">
-                    <h1>Content box</h1>
+            <div class="row immegration_content">
+                <div class="col-12 d-flex justify-content-center align-items-center" style="height: 200px;">
+                    <div class=" loader-circle "></div>
                 </div>
+
             </div>
         </div>
 

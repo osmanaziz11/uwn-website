@@ -210,7 +210,7 @@
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 
     <script>
-    const baseURL = 'http://localhost/UWM/admin/';
+    const baseURL = 'http://localhost:81/uwn/admin/';
     </script>
 
     <!-- Script Written by Collaborator (Hadees) -->
@@ -339,6 +339,59 @@
     }
     </script>
 
+    <!-- Script Written by Osman  -->
+    <script>
+    const uploadIMG = async (input) => {
+        const formData = new FormData();
+        formData.append('img', input);
+        const req = await fetch(`${baseURL}server/upload-img.php`, {
+            method: "POST",
+            body: formData,
+            header: {
+                contentType: false,
+                processData: false
+            }
+        })
+        return 1;
+    }
+
+    const FetchImmegrationContent = async () => {
+        const req = await fetch(`${baseURL}/server/api/immegration.php`);
+        const resp = await req.json();
+        if (resp.status == 1) {
+            document.getElementsByClassName('immegration_content')[0].innerHTML = "";
+            window.IMM = resp.record;
+            resp.record.map((item, index) => {
+                document.getElementsByClassName('immegration_content')[0].innerHTML += ` <div id="${item.id}IMM" class=" col-md-3 col-sm-6 mb-3">
+                    <div class="shadow rounded">
+                        <div class=" imgBox rounded shadow position-relative" style="height: 200px;">
+                            <img src="../assects/uploads/${item.filename}" alt="img" class="w-100 h-100">
+                            <div
+                                class="approveBox w-100 h-100 position-absolute bg-dark top-0 left-0 d-flex justify-content-center align-items-center">
+                                <button onclick="deleteIMM_content(${item.id})" class="btn btn-danger"> Delete </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>`
+            })
+        }
+    }
+    const deleteIMM_content = async (id) => {
+        const req = await fetch(`${baseURL}/server/api/delete/immegration.php`, {
+            method: "POST",
+            body: JSON.stringify({
+                id
+            }),
+        })
+        const resp = await req.json();
+        if (resp.status == 1) {
+            document.getElementById(`${id}IMM`).classList.add('d-none');
+        }
+
+
+    }
+    </script>
+
     <!--******** WARNING: This is written previosly ********** -->
     <!-- custom Funtion script  -->
     <script>
@@ -427,20 +480,24 @@
     <!-- Pages Funtion Script  -->
     <script>
     //  Image Preview 
-    const readURL = (input) => {
+    const readURL = async (input) => {
         var ext = input.files[0]['name'].substring(input.files[0]['name'].lastIndexOf('.') + 1).toLowerCase();
         if (input.files && input.files[0] && (ext == "png" || ext == "jpeg" || ext == "jpg")) {
-            $($(input).attr('data-container')).addClass('validError');
+            console.log(input.files[0]);
+            $(`${$(input).attr('data-container')} + .loader-circle`).removeClass('d-none');
             var reader = new FileReader();
             reader.onload = function(e) {
-                $($(input).attr('data-container')).html('<img src="' + e.target.result + '" onload="" />');
+                $(`#imgContainer`).html('<img src="' + e.target.result +
+                    '" onload="" />');
             }
-            $(`${$(input).attr('data-container')} + .loader-circle`).removeClass('d-none');
+            const isUploaded = await uploadIMG(input.files[0]);
+
             setTimeout(() => {
-                $($(input).attr('data-container')).removeClass('validError');
-                $(`${$(input).attr('data-container')} + .loader-circle`).addClass('d-none');
-                reader.readAsDataURL(input.files[0]);
-            }, 2000);
+                if (isUploaded) {
+                    $(`${$(input).attr('data-container')} + .loader-circle`).addClass('d-none');
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }, 3000);
         } else {
             $($(input).attr('data-container')).addClass('invalidError');
             setTimeout(() => {
@@ -477,6 +534,7 @@
 
     // Relevant Container 
     const relevant_Container = (event) => {
+        if ($(event).attr('data-box-id') === 'content-cont') FetchImmegrationContent();
         $(getContainer_byClassName($(event).attr('data-box-id'))).addClass('d-block').siblings().removeClass(
             'd-block')
     }

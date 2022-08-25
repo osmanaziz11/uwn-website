@@ -939,7 +939,13 @@ body {
 #inner-pg-container .preview-container .content-cont {
   display: none;
 }
-
+.content-cont::-webkit-scrollbar {
+  display: none;
+}
+.content-cont {
+  overflow: scroll !important;
+  height: 280px;
+}
 #inner-pg-container .preview-container .upload-cont .upload-box {
   height: 216px;
   width: 240px;
@@ -977,24 +983,11 @@ body {
   transition: all 0.5s;
 }
 
-#inner-pg-container .preview-container .upload-cont .video-box .loader-circle {
+#inner-pg-container .preview-container .upload-cont .media-cont .loader-circle {
   width: 50px;
   height: 50px;
   position: absolute;
   border: 3px solid transparent;
-}
-
-#inner-pg-container .preview-container .upload-cont .video-box span {
-  width: 100%;
-  height: 100%;
-}
-
-#inner-pg-container .preview-container .upload-cont .video-box span video {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  outline: none;
 }
 
 #inner-pg-container .preview-container .upload-cont .iconify {
@@ -2204,6 +2197,13 @@ body {
   -webkit-animation: rotateCircle 1.2s linear infinite;
   animation: rotateCircle 1.2s linear infinite;
 }
+.loader-circle {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-left-color: #292a30;
+  border: 2px solid snow;
+}
 
 @-webkit-keyframes rotateCircle {
   50% {
@@ -2248,7 +2248,7 @@ body {
 .newsContent {
   overflow: scroll;
 }
-.newsContent .approveBox {
+.approveBox {
   opacity: 0;
   transition: all 0.5s;
   z-index: 4444;
@@ -2260,7 +2260,7 @@ body {
   line-height: 2.3;
   font-size: 0.9rem;
 }
-.newsContent .approveBox:hover {
+.approveBox:hover {
   opacity: 1;
 }
 .newsContent button {
