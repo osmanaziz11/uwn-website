@@ -23,6 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
     <!-- Iconify icons  -->
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -32,32 +33,18 @@
 
     <section>
         <div class="container-fluid px-md-5 px-4 mt-5">
+            <div dir="rtl" id="newscontainer" class="row related_news">
+                <!-- Loader  -->
 
-            <div class="row related_news">
-                <div class="col-md-3 col-sm-6">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
+                <!-- <div class="col-12 w-100 h-100 bg-black d-flex justify-content-center align-items-center"
+                    style="height: 400px !important;">
+                    <div class="loader-circle"
+                        style="position: absolute;height: 50px;width: 50px;border-left-color: #292a30;border: 2px solid snow;">
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores!</p>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores!</p>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores!</p>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores!</p>
-                </div>
+                </div> -->
+
+                <!-- Loader Ends  -->
+
             </div>
         </div>
     </section>
@@ -66,6 +53,10 @@
     <?php require_once "components/footer.php"; ?>
     <!-- Footer end -->
 
+    <script>
+    const url = window.location.pathname.slice(5);
+    displayNews();
+    </script>
 </body>
 
 </html>

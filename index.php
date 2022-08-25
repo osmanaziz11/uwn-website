@@ -405,7 +405,9 @@
     <!-- Footer  -->
     <?php require_once "components/footer.php"; ?>
     <!-- Footer end -->
+    <script>
 
+    </script>
     <script src="assects/Js/jquery.js"></script>
     <script>
     let children = $(".slider_container").children().length;
