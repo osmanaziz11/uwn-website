@@ -30,7 +30,6 @@
     <!-- Header  -->
     <?php require_once "components/header.php"; ?>
     <!-- Header end  -->
-
     <section>
         <div class="container-fluid px-md-5 px-4 mt-5">
             <div dir="rtl" id="newscontainer" class="row related_news">
@@ -42,9 +41,11 @@
                     </div>
                 </div> -->
                 <!-- Loader Ends  -->
+
             </div>
         </div>
     </section>
+
 
     <!-- Footer  -->
 
