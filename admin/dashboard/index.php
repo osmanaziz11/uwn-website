@@ -93,13 +93,13 @@
             </div>
             <div class="row mt-4">
                 <div class="col-4 img-box pe-0" data-id="2">
-                    <img src="../assects/Images/sidebar-img/sidebar-2(S).jpg" alt="Image">
+
                 </div>
                 <div class="col-4 p-0 img-box" data-id="3">
-                    <img src="../assects/Images/sidebar-img/sidebar-3(S).jpg" alt="Image">
+
                 </div>
                 <div class="col-4 ps-0 img-box" data-id="4">
-                    <img src="../assects/Images/sidebar-img/sidebar-4(S).jpg" alt="Images">
+
                 </div>
             </div>
             <div class="row mt-2">
@@ -426,14 +426,42 @@
 
     <!-- Pages Funtion Script  -->
     <script>
+    //  Image Preview 
+    const readURL = (input) => {
+        var ext = input.files[0]['name'].substring(input.files[0]['name'].lastIndexOf('.') + 1).toLowerCase();
+        if (input.files && input.files[0] && (ext == "png" || ext == "jpeg" || ext == "jpg")) {
+            $($(input).attr('data-container')).addClass('validError');
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $($(input).attr('data-container')).html('<img src="' + e.target.result + '" onload="" />');
+            }
+            $(`${$(input).attr('data-container')} + .loader-circle`).removeClass('d-none');
+            setTimeout(() => {
+                $($(input).attr('data-container')).removeClass('validError');
+                $(`${$(input).attr('data-container')} + .loader-circle`).addClass('d-none');
+                reader.readAsDataURL(input.files[0]);
+            }, 2000);
+        } else {
+            $($(input).attr('data-container')).addClass('invalidError');
+            setTimeout(() => {
+                $($(input).attr('data-container')).removeClass('invalidError');
+            }, 2000);
+        }
+    }
     // Page Setting Navigator 
     const pgeSetting_Navigator = event => {
         let frontPge = document.getElementById('front-pg');
         let innerPge = document.getElementsByClassName('inner-pg')[0];
         let container = document.getElementById('inner-pg-content');
         let whichPge = $(event).attr('data-pg');
-        let url = (whichPge === 'immegration') ? `Inner Pages/immegration.php` : `Inner Pages/basePge.php`
-        FetchNews(whichPge);
+        let url = ""
+        if (whichPge === 'immegration') {
+            url = `Inner Pages/immegration.php`
+        } else {
+            url = `Inner Pages/basePge.php`
+            FetchNews(whichPge);
+        }
+
         pgeRetrieval(url, container);
         frontPge.classList.add('front-pg-active');
         innerPge.classList.add('inner-pg-active');
