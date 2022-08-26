@@ -44,7 +44,7 @@
           <div class="row">
               <div class="col navbar d-flex justify-content-md-end justify-content-center">
                   <ul class="d-flex m-md-0 mt-5 p-0 flex-md-row flex-column list-unstyled text-white">
-                      <a href="">
+                      <a href="immegration.php">
                           <li class="mx-4 my-md-1 my-4 text-center">
                               &#x627;&#x645;&#x6cc;&#x6af;&#x631;&#x6cc;&#x634;&#x646;</li>
                       </a>

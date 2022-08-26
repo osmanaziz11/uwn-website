@@ -55,7 +55,7 @@ img {
   height: 100%;
   outline: none;
   padding: 2px;
-  font-family: "Noto Nastaliq Urdu", serif;
+  font-family: 'Noto Nastaliq Urdu', serif;
   font-size: 0.8rem;
   letter-spacing: 1px;
   color: rgb(173, 174, 173);
@@ -126,7 +126,7 @@ img {
   color: white;
   direction: rtl;
   z-index: 4333;
-  font-family: "Noto Nastaliq Urdu", serif;
+  font-family: 'Noto Nastaliq Urdu', serif;
   bottom: 10%;
   line-height: 43px;
   right: 10px;
@@ -216,11 +216,42 @@ img {
   height: 100%;
   object-fit: cover;
 }
+
 .loader-circle {
-  width: 50px;
-  height: 50px;
+  border-radius: 50%;
+  -webkit-animation: rotateCircle 1.2s linear infinite;
+  animation: rotateCircle 1.2s linear infinite;
+}
+.loader-circle {
   position: absolute;
-  top: 64px;
-  left: 64px;
-  border: 3px solid transparent;
+  height: 50px;
+  width: 50px;
+  border-left-color: #292a30;
+  border: 2px solid snow;
+}
+
+@-webkit-keyframes rotateCircle {
+  50% {
+    border-left-color: #9b59b6;
+  }
+  75% {
+    border-left-color: #e67e22;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateCircle {
+  50% {
+    border-left-color: #9b59b6;
+  }
+  75% {
+    border-left-color: #e67e22;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
