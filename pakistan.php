@@ -23,6 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
     <!-- Iconify icons  -->
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -31,21 +32,22 @@
     <!-- Header end  -->
 
     <section>
-        <div dir="rtl" id="newscontainer" class="row related_news">
-            <!-- Loader  -->
-            <div style="height:300px;">
-                <?php include "components/loader.php"; ?>
+        <div class="container-fluid px-md-5 px-4 mt-5">
+            <div dir="rtl" id="newscontainer" class="row related_news">
+                <!-- Loader  -->
+                <div style="height:300px;">
+                    <?php include "components/loader.php"; ?>
+                </div>
+                <!-- Loader Ends  -->
             </div>
-            <!-- Loader Ends  -->
-        </div>
         </div>
     </section>
 
     <!-- Footer  -->
     <?php require_once "components/footer.php"; ?>
     <!-- Footer end -->
-
-
+    <script type="module" src="assects/Js/environment.js">
+    </script>
 </body>
 
 </html>

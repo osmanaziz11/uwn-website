@@ -23,50 +23,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
     <!-- Iconify icons  -->
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
 </head>
 
 <body>
     <!-- Header  -->
     <?php require_once "components/header.php"; ?>
     <!-- Header end  -->
+
     <section>
-        <div dir="rtl" id="newscontainer" class="row related_news">
-            <!-- Loader  -->
-            <div style="height:300px;">
-                <?php include "components/loader.php"; ?>
+        <div class="container-fluid px-md-5 px-4 mt-5">
+            <div class="row my-5 pageHeading">
+                <!-- <h1 dir="rtl">
+                    &#x628;&#x6cc;&#x646;&#x20;&#x627;&#x644;&#x627;&#x642;&#x648;&#x627;&#x645;&#x6cc;&#x20;&#x62e;&#x628;&#x631;&#x6cc;&#x6ba;
+                </h1> -->
             </div>
-            <!-- Loader Ends  -->
+            <div dir="rtl" id="newscontainer" class="row related_news">
+                <!-- Loader  -->
+                <div style="height:300px;">
+                    <?php include "components/loader.php"; ?>
+                </div>
+                <!-- Loader Ends  -->
+            </div>
         </div>
-
     </section>
-
 
     <!-- Footer  -->
     <?php require_once "components/footer.php"; ?>
     <!-- Footer end -->
-
-    <script>
-    // async function displayNews() {
-    //     const a = await fetch(`http://localhost/UWM/server/api/international.php`, {
-    //         method: "GET",
-    //     })
-    //     let DataInJSON = await a.json();
-    //     let ab = DataInJSON.record;
-    //     let gotD = document.getElementById("newscontainer");
-    //     ab.map((post) => {
-    //         gotD.innerHTML +=
-    //             `<div class = "col-md-3 col-sm-6">
-    //             <div class = "imgBox rounded shadow">
-    //                  <img src = "${post.thumbnail}" alt = "">
-    //             </div>
-    //              <p> ${post.title} </p>
-    //              <P> ${post.publishedAt}</p>
-    //         </div>`
-    //     })
-    // }
-    // displayNews();
+    <script type="module" src="assects/Js/environment.js">
     </script>
-    <!-- >>>>>>> a43192ff0a4e12ecb065ed90526b9b544f2f5c2a -->
+
 </body>
 
 </html>

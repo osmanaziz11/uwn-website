@@ -31,19 +31,22 @@
     <!-- Header end -->
 
     <section>
-        <div dir="rtl" id="newscontainer" class="row related_news">
-            <!-- Loader  -->
-            <div style="height:300px;">
-                <?php include "components/loader.php"; ?>
+        <div class="container-fluid px-md-5 px-4 mt-5">
+            <div dir="rtl" id="newscontainer" class="row related_news">
+                <!-- Loader  -->
+                <div style="height:300px;">
+                    <?php include "components/loader.php"; ?>
+                </div>
+                <!-- Loader Ends  -->
             </div>
-            <!-- Loader Ends  -->
         </div>
     </section>
 
     <!-- Footer  -->
     <?php require_once "components/footer.php"; ?>
     <!-- Footer end -->
-
+    <script type="module" src="assects/Js/environment.js">
+    </script>
 </body>
 
 </html>

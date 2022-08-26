@@ -32,32 +32,12 @@
 
     <section>
         <div class="container-fluid px-md-5 px-4 mt-5">
-
-            <div class="row related_news">
-                <div class="col-md-3 col-sm-6">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores!</p>
+            <div dir="rtl" id="newscontainer" class="row related_news">
+                <!-- Loader  -->
+                <div style="height:300px;">
+                    <?php include "components/loader.php"; ?>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores!</p>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores!</p>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores!</p>
-                </div>
+                <!-- Loader Ends  -->
             </div>
         </div>
     </section>

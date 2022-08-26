@@ -273,3 +273,20 @@ img {
     transform: rotate(360deg);
   }
 }
+
+.pageHeading {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-size: 1.2rem;
+  letter-spacing: 0px;
+  font-weight: bolder;
+}
+.article_feed h3 {
+  direction: rtl;
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-size: 2rem;
+}
+.article_feed .para {
+  direction: rtl;
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-size: 1.2rem;
+}
