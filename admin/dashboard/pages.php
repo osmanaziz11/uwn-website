@@ -124,10 +124,11 @@
                         <li></li>
                     </ul>
                 </div>
-                <h6 class="mb-4">Immegration</h6><button class="edit-btn" data-pg="immegration"
+                <h6 class="mb-4">Business</h6><button class="edit-btn" data-pg="business"
                     onclick='pgeSetting_Navigator(this)'>Edit</button>
             </div>
         </div>
+
     </div>
     <!-- End  -->
 

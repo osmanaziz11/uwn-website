@@ -61,6 +61,10 @@
                     <h6>Pages</h6>
                 </li>
 
+                <li data-pge="immegration.php" onclick='navigator(this)' class="rounded "><span class="iconify "
+                        data-icon="clarity:copy-solid" style="color: white;" data-flip="horizontal"></span>
+                    <h6>Immegration</h6>
+                </li>
                 <li data-pge="categories.php" onclick='navigator(this)' class="rounded "><span class="iconify "
                         data-icon="clarity:copy-solid" style="color: white;" data-flip="horizontal"></span>
                     <h6>Categories</h6>
@@ -215,7 +219,7 @@
 
     <!-- Script Written by Collaborator (Hadees) -->
     <script>
-    async function FetchNews(attribute) {
+    async function FetchNews(attribute, threshold) {
         window.r = attribute; // clicked page name
         const page = attribute.replace(".php", "");
 
@@ -229,7 +233,7 @@
         if (DataInJSON.status == 1) {
             gotsingleNews.innerHTML = "";
             window.value.map((post, index) => {
-                exists(index);
+                exists(index, threshold);
                 gotsingleNews.innerHTML += `<div id="${index}" class="col-md-3 col-sm-6 mb-3">
                         <div class="shadow rounded">
                             <div class=" imgBox rounded shadow position-relative" style="height: 200px;">
@@ -261,10 +265,10 @@
         } else {}
     }
     // inserting approved article into DB 
-    async function insertIntoDB(ind) {
+    async function insertIntoDB(ind, threshold) {
         // api sending article into database
         let url = window.value[ind].articleLink;
-        let slug = url.slice(-8);
+        let slug = url.slice(threshold);
         window.value[ind]['slug'] = slug;
         const resp = await fetch(`${baseURL}server/api/insert/${window.r}.php`, {
             method: "POST",
@@ -279,9 +283,9 @@
     }
 
     // when approve button is clicked
-    async function Execute(a) {
+    async function Execute(a, threshold) {
         // sending data into DATABASE
-        const s = await insertIntoDB(a);
+        const s = await insertIntoDB(a, threshold);
         console.log(s);
         // check if data is successfully inserted into DB or not
         if (s == 1) {
@@ -289,9 +293,9 @@
         }
     }
 
-    async function deleteFromDB(a) {
+    async function deleteFromDB(a, threshold) {
         let artLink = window.value[a].articleLink;
-        let artikey = artLink.slice(-8); // getting the last 8 digits of articl-link
+        let artikey = artLink.slice(threshold); // getting the last 8 digits of articl-link
         const resp = await fetch(`${baseURL}server/api/delete/${window.r}.php`, {
             method: "POST",
             headers: {
@@ -311,9 +315,9 @@
     }
 
     // check if article is already in DB
-    async function exists(a) {
+    async function exists(a, threshold) {
         let artLink = window.value[a].articleLink;
-        let artikey = artLink.slice(-8); // getting the last 8 digits of articllink
+        let artikey = artLink.slice(threshold); // getting the last 8 digits of articllink
 
         // api checking fro existense in database
         const resp = await fetch(`${baseURL}server/api/exist/${window.r}.php`, {
@@ -332,9 +336,11 @@
         const gotApprove = container.querySelectorAll(".approveBox")[0];
 
         if (statuss == 1) {
-            gotApprove.innerHTML = `<button onclick="deleteFromDB(${a})" class="btn btn-danger"> Delete </button>`
+            gotApprove.innerHTML =
+                `<button onclick="deleteFromDB(${a},${threshold})" class="btn btn-danger"> Delete </button>`
         } else if (statuss == 0) {
-            gotApprove.innerHTML = `<button onclick="Execute(${a})" class="btn btn-primary"> Approve </button>`
+            gotApprove.innerHTML =
+                `<button onclick="Execute(${a},${threshold})" class="btn btn-primary"> Approve </button>`
         }
     }
     </script>
@@ -511,14 +517,9 @@
         let innerPge = document.getElementsByClassName('inner-pg')[0];
         let container = document.getElementById('inner-pg-content');
         let whichPge = $(event).attr('data-pg');
-        let url = ""
-        if (whichPge === 'immegration') {
-            url = `Inner Pages/immegration.php`
-        } else {
-            url = `Inner Pages/basePge.php`
-            FetchNews(whichPge);
-        }
-
+        url = `Inner Pages/basePge.php`
+        let threshold = (whichPge != 'business') ? -8 : -19
+        FetchNews(whichPge, threshold);
         pgeRetrieval(url, container);
         frontPge.classList.add('front-pg-active');
         innerPge.classList.add('inner-pg-active');
