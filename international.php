@@ -32,15 +32,12 @@
     <section>
         <div dir="rtl" id="newscontainer" class="row related_news">
             <!-- Loader  -->
-            <div class="col-12 position-relative w-100 h-100 bg-black d-flex justify-content-center align-items-center"
-                style="height: 400px !important;">
-                <div class="loader-circle"
-                    style="position: absolute;height: 50px;width: 50px;border-left-color: #292a30;border: 2px solid snow;">
-                </div>
+            <div style="height:300px;">
+                <?php include "components/loader.php"; ?>
             </div>
             <!-- Loader Ends  -->
         </div>
-        </div>
+
     </section>
 
 

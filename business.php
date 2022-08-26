@@ -33,31 +33,28 @@
     <section>
         <div class="container-fluid px-md-5 px-4 mt-5">
 
-            <div class="row related_news">
-                <div class="col-md-3 col-sm-6">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
+            <div dir="rtl" class="row related_news">
+                <div class="col-md-3 col-sm-6   p-0">
+                    <div class="singleBox shadow rounded">
+                        <div class="imgBox">
+                            <img src="assects/img/1.jpg" alt="">
+                        </div>
+
+                        <h1 class="m-0 my-2 px-2 title">
+                            <a href="">پاکستان انڈیا کرکٹ کے یادگار لمحات: جب گنگولی کباب کھانے
+                                لاہور
+                                کی
+                                فوڈ
+                                سٹریٹ
+                                پہنچے
+
+                            </a>
+                        </h1>
+
+                        <p class="px-2 pb-2  text-end">26 اگست 2022</p>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores!</p>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores!</p>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores!</p>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dolores!</p>
-                </div>
+
             </div>
         </div>
     </section>
