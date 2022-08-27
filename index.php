@@ -1,3 +1,22 @@
+<?php
+require_once './server/db-config.php';
+try{
+  $ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'http://ip-api.com/json/');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$data = curl_exec($ch);
+$data = json_decode($data);
+if ($data->status == 'success') {
+  $sql=$conn->prepare('INSERT INTO `visitorstats` (`country`, `city`, `state`) VALUES (:country,:city,:state);');
+  $sql->execute(['country' => $data->country,'city' => $data->city,'state' => $data->regionName]);
+}
+}catch(PDOException $exc){
+  echo $exc->getMessage();
+}
+?>
+
+
+
 <!-- Header  -->
 <?php require_once "components/header.php"; ?>
 <!-- Header end  -->

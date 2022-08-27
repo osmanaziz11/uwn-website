@@ -5,8 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&#1575;&#1585;&#1583;&#1608; &#1606;&#1740;&#1608;&#1586; - &#1662;&#1729;&#1604;&#1575;
-        &#1589;&#1601;&#1581;&#1729;</title>
+    <title>&#1575;&#1585;&#1583;&#1608; &#1606;&#1740;&#1608;&#1586; </title>
     <!-- Favicon  -->
     <link rel="shortcut icon" href="assects\img\Logo.jpg" type="image/jpg" />
     <!-- Global.css  -->
@@ -40,7 +39,8 @@
             <!-- search logo info  -->
             <div class="row bottom_bar">
                 <div class="col-3 d-flex justify-content-md-center align-items-center information_container d-flex">
-                    <span class="iconify menu d-md-none d-block" data-icon="ci:menu-alt-03"></span>
+                    <span class="iconify menu d-md-none d-block" data-icon="ci:menu-alt-03"
+                        onclick="expandMenu()"></span>
                     <div class="weather_update d-md-flex d-none h-100">
                         <div id="weather-icon">
                             <!-- <img src="" alt="weather-icon" srcset=""> -->
@@ -109,3 +109,9 @@
     </header>
     <!-- Weather Api Script  -->
     <script src="assects/Js/nav-weather.js"></script>
+    <script>
+    const navbar = document.getElementsByClassName('navbar')[0];
+    const expandMenu = () => {
+        navbar.classList.toggle('navbar_active');
+    }
+    </script>
