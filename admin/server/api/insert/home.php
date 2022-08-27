@@ -2,7 +2,7 @@
 
 // Expected Json Input 
 // {
-// "slug":"pakistan-62609539",
+// "slug":"world-62609539",
 // "articleLink": "https://www.bbc.com/urdu/pakistan-62609539",
 // "publishedAt": "20 اگست 2022",
 // "thumbnail": "https://ichef.bbci.co.uk/news/240/cpsprodpb/1020A/production/_126385066_p0cv6fx0.jpg",
@@ -21,16 +21,17 @@ $data=json_decode(file_get_contents("php://input"),true);
 $slug=$data['slug'];
 $link=$data['articleLink'];
 $date=$data['publishedAt'];
+$SDesc=(array_key_exists('shortDesc',$data))?$data['shortDesc']:"";
 $image=$data['thumbnail'];
 $title=$data['title'];
 
  try {
-        $sqlQuery = "INSERT INTO sports_news (slug,articleLink,publishedAt,thumbnail,title) Values(:slug,:link,:date,:image,:title)";
+        $sqlQuery = "INSERT INTO home_news (slug,articleLink,publishedAt,shortDesc,thumbnail,title) Values(:slug,:link,:date,:SDesc,:image,:title)";
         $sql = $conn->prepare($sqlQuery);
-        $sql->execute([':slug'=>$slug,':link'=>$link,':date'=>$date,':image'=>$image,':title'=>$title]);
-        echo json_encode(array('record'=>'','status'=>1));
+        $sql->execute([':slug'=>$slug,':link'=>$link,':date'=>$date,'SDesc'=>$SDesc,':image'=>$image,':title'=>$title]);
+        echo json_encode(array('status'=>1));
    } catch (Exception $exc) {
-        echo json_encode(array('result'=>'','status'=>0));
+        echo json_encode(array('status'=>0));
    }
 
 ?>

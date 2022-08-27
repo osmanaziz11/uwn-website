@@ -14,12 +14,12 @@ export async function populateNews(pageName) {
                             <img src="${post.thumbnail}" alt="">
                         </div>
 
-                        <h1 class="m-0 my-2 px-2 title">
-                            <a href="article.php?article=${post.slug}&category=international" target="_blank">
+                        <p class="m-0 my-2 px-2 title">
+                            <a href="article.php?article=${post.slug}&category=sports" target="_blank">
                             ${post.title}
                             </a>
-                        </h1>
-                        <p class="px-2 pb-2  text-end">${post.publishedAt} </p>
+                        </p>
+                        <p class="px-2 py-2 date text-end">${post.publishedAt} </p>
                     </div>
                 </div>`;
     });

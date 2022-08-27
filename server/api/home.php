@@ -10,11 +10,9 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 
  try {
-        $sql = $conn->prepare("SELECT * FROM artist_news");
+        $sql = $conn->prepare("SELECT * FROM home_news");
         $sql->execute();
         $result = $sql->fetchAll(PDO::FETCH_ASSOC);
-        // print_r($result); 
-    
             if (is_countable($result) && count($result) > 0) {
             echo json_encode(array('record'=>$result,'status'=>1));
         } 

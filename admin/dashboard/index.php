@@ -1,3 +1,10 @@
+<?php include_once "../server/constants.php"  ?>
+<?php
+session_start();
+if (!isset($_SESSION['verify_username'])) {
+     header('Location:'.constant('hostname').'Login.php');
+} ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +35,7 @@
     <div id="sidebar-container">
         <div class="transparent-bg"></div>
         <div id="logoDetail">
-            <h5><a href="http://localhost:81/Apparel/">Urdu World News</a></h5>
+            <h5><a href="">Urdu World News</a></h5>
             <div class="style-bar mt-4"></div>
         </div>
         <div class="btn-center">
@@ -141,7 +148,7 @@
         <div id="header-container" class="container-fluid shadow">
             <div class="row">
                 <div class="col-6">
-                    <div class="notify-box">
+                    <!-- <div class="notify-box">
                         <div id="notification" class="red-dot">23</div>
                         <span class="iconify" data-icon="clarity:notification-line" style="color: #545454;"></span>
                         <div id="email" class="red-dot">23</div>
@@ -149,7 +156,7 @@
                         <div id="chat" class="red-dot">23</div>
                         <span class="iconify" data-icon="ci:chat" style="color: #545454;"></span>
                         <span class="iconify" data-icon="ci:line-m" style="color: #545454;" data-flip="vertical"></span>
-                    </div>
+                    </div> -->
                     <div class="search-wrapper d-none">
                         <div class="input-holder">
                             <input type="text" class="search-input" placeholder="Type to search" />
@@ -163,7 +170,7 @@
                         <!-- Online Dot: small Green dot on Profile Picture -->
                         <div class="online-dot"></div>
                         <div id="img-box">
-                            <img src="../assects/Images/admin-profile/uploads/Default.png" alt="">
+                            <img src="../assects/img/Default.png" alt="">
                         </div>
                         <h4 id="userName-H">Usman</h4>
                         <p>Admin</p>
@@ -178,51 +185,19 @@
         </div>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <script>
-    var xValues = ["Pakistan", "UK", "India", "USA", "Australia"];
-    var yValues = [55, 49, 44, 24, 15];
-    var barColors = [
-        "#81DDC6",
-        "#50514F",
-        "#F45E58",
-        "#ECC44D",
-        "#DA4C62"
-    ];
-
-    new Chart("myChart", {
-        type: "pie",
-        data: {
-            labels: xValues,
-            datasets: [{
-                backgroundColor: barColors,
-                data: yValues
-            }]
-        },
-        options: {
-            title: {
-                display: true,
-                text: "World Wide Users"
-            }
-        }
-    });
-    </script>
 
     <!-- Jquery Script  -->
     <script src="../assects/Js/jquery.js"></script>
     <!-- Iconify Script  -->
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 
-    <script>
-    const baseURL = 'http://localhost:81/uwn/admin/';
-    </script>
+    <script src="assects/Js/variable.js"></script>
 
     <!-- Script Written by Collaborator (Hadees) -->
     <script>
     async function FetchNews(attribute, threshold) {
         window.r = attribute; // clicked page name
         const page = attribute.replace(".php", "");
-
         const a = await fetch(`http://127.0.0.1:5000/api/${page}/news`, {
             method: "GET",
         })
@@ -485,6 +460,54 @@
 
     <!-- Pages Funtion Script  -->
     <script>
+    // Profile Image Upload 
+    let profileImg_update = event => {
+        event.preventDefault();
+        console.log(`first`)
+        const formData = new FormData(document.getElementById('profileImgForm'));
+        setTimeout(() => {
+            $('.card-avatar .loader-circle').addClass('d-none');
+            fetch('../server/profile-update.php', {
+                method: 'POST',
+                body: formData,
+                header: {
+                    contentType: false,
+                    processData: false
+                }
+            }).then(resp => resp.text()).then(res => {
+                $('.card-body .upload-btn').prop('disabled', true);
+                $('.card-body .upload-btn').html('Uploaded');
+            }).catch(error => {
+                console.log(error);
+            })
+        }, 2000)
+        $('.card-avatar .loader-circle').removeClass('d-none');
+
+    }
+    const removeIMG = () => {
+        $('.card-avatar label img').attr('src', '../assects/img/Default.png');
+    }
+    const readAdminIMG = (input) => {
+        console.log(`first`)
+        var ext = input.files[0]['name'].substring(input.files[0]['name'].lastIndexOf('.') + 1).toLowerCase();
+        if (input.files && input.files[0] && (ext == "png" || ext == "jpeg" || ext == "jpg")) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                console.log($(input).attr('data-container'))
+                $('.card-avatar label').html('<img src="' + e.target.result + '" onload="" />');
+            }
+            $(`.card-avatar  .loader-circle`).removeClass('d-none');
+            setTimeout(() => {
+                $(`.card-avatar  .loader-circle`).addClass('d-none');
+                reader.readAsDataURL(input.files[0]);
+            }, 2000);
+        } else {
+            $('.card-avatar').addClass('invalidError');
+            setTimeout(() => {
+                $('.card-avatar').removeClass('invalidError');
+            }, 2000);
+        }
+    }
     //  Image Preview 
     const readURL = async (input) => {
         var ext = input.files[0]['name'].substring(input.files[0]['name'].lastIndexOf('.') + 1).toLowerCase();
@@ -518,7 +541,14 @@
         let container = document.getElementById('inner-pg-content');
         let whichPge = $(event).attr('data-pg');
         url = `Inner Pages/basePge.php`
-        let threshold = (whichPge != 'business') ? -8 : -19
+        let threshold = ""
+        if (whichPge == 'business') {
+            threshold = -19;
+        } else if (whichPge == 'home') {
+            threshold = -6;
+        } else {
+            threshold = -8;
+        }
         FetchNews(whichPge, threshold);
         pgeRetrieval(url, container);
         frontPge.classList.add('front-pg-active');

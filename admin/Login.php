@@ -1,5 +1,10 @@
 <?php include_once "server/constants.php"  ?>
-
+<?php
+session_start();
+if (isset($_SESSION['verify_username'])) {
+    header('Location:'.constant('hostname').'dashboard/');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,23 +61,6 @@
                     <h6 id="recover-btn">Forget Password?</h6>
                 </form>
 
-                <!-- Forget Password Container  -->
-                <!-- <div class="forget-box">
-                    <form action="" class="recovery-form">
-                        <h6>Enter Your Username.</h6>
-                        <input type="text" name="recUsername" id="recUsername" required>
-                        <p class="text-center mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita
-                            perspiciatis ipsum, aliquid voluptatibus</p>
-
-                        <button class="proceed-btn">
-                            <h6>Proceed</h6>
-                            <div class="loader-circle"></div>
-                            <div class="check-icon"></div>
-                        </button>
-                        <i class="fas fa-arrow-left"></i>
-                    </form>
-
-                </div> -->
             </div>
         </div>
     </div>
@@ -133,6 +121,7 @@
         });
     });
     </script>
+    <script src="assects/Js/variable.js"></script>
     <!-- Funtion Script  -->
     <script>
     // Event Trigger: When Login Form Submit 
@@ -154,7 +143,7 @@
                     $('.right').removeClass('shadow');
                     $('.right').addClass('valid-error');
                     setTimeout(() => {
-                        window.location.href = 'http://localhost:81/uwn/admin/dashboard/';
+                        window.location.href = `${baseURL}dashboard`;
                     }, 2000)
                 } else {
                     $('.right').removeClass('shadow');

@@ -7,6 +7,6 @@ const Populate = () => {
   // =========================================
 
   //   For LocalServer Use this Hard coded string
-  populateNews('/international.php');
+  populateNews('/sports.php');
 };
 Populate();

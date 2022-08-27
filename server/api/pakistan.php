@@ -16,7 +16,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
         // print_r($result); 
     
             if (is_countable($result) && count($result) > 0) {
-            echo json_encode(array('record'=>$result,'status'=>0));
+            echo json_encode(array('record'=>$result,'status'=>1));
         } 
       //   if not send response to 0
         else {

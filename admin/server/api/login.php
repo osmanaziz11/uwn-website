@@ -19,9 +19,12 @@ $pass=$data['password'];
       //   if user exist create session
             if (is_countable($result) && count($result) > 0) {
               session_start();
+           $_SESSION['verify_username'] = $result['username'];
+            $_SESSION['verify_password'] = $result['password'];
             $_SESSION['verify_name'] = $result['name_admin'];
-            $_SESSION['verify_username'] = $user;
-            $_SESSION['verify_password'] = $pass;
+            $_SESSION['verify_dispName'] = $result['displayName'];
+            $_SESSION['verify_thumbnail'] = $result['thumbnail_admin'];
+            $_SESSION['verify_accEmail'] = $result['accEmail'];
             echo json_encode(array('record'=>$result,'status'=>1));
         } 
       //   if not send response to 0

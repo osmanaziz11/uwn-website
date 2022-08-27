@@ -1,425 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Header  -->
+<?php require_once "components/header.php"; ?>
+<!-- Header end  -->
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&#1575;&#1585;&#1583;&#1608; &#1606;&#1740;&#1608;&#1586; - &#1662;&#1729;&#1604;&#1575;
-        &#1589;&#1601;&#1581;&#1729;</title>
-    <!-- Favicon  -->
-    <link rel="shortcut icon" href="assects\img\Logo.jpg" type="image/jpg" />
-    <!-- Global.css  -->
-    <link rel="stylesheet" href="assects\css\global.css" />
-    <!-- Bootstrap CDN  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
-    <!-- Iconify icons  -->
-    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-</head>
+<!-- Google Advertisement  -->
 
-<body>
-    <!-- Header  -->
-    <?php require_once "components/header.php"; ?>
-    <!-- Header end  -->
+<!-- Google Advertisement end -->
 
-    <!-- Google Advertisement  -->
-
-    <!-- Google Advertisement end -->
-
-    <!-- hero section  -->
-    <div class="container-fluid hero_section my-5">
-        <div class="row">
-            <div class="col-md-4 d-md-block d-none">
-                <div class="contaienr-fluid">
-                    <div class="row">
-                        <div class="col-12 d-flex pe-0 justify-content-md-end">
-
-                            <div class="slider_child position-relative">
-                                <div class="transition w-100 h-100 position-absolute"></div>
-                                <img src="assects/img/2.jpg" alt="">
-                                <h6 class="position-absolute">گریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں</h6>
-                                <p>02 August 2022</p>
-                            </div>
-                        </div>
-                        <div class="col-12 d-flex pe-0 justify-content-end">
-                            <div class="slider_child position-relative">
-                                <div class="transition w-100 h-100 position-absolute"></div>
-                                <img src="assects/img/2.jpg" alt="">
-                                <h6 class="position-absolute">گریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں</h6>
-                                <p>02 August 2022</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- slider  -->
-            <div class="col-md-8 ps-md-0 ps-2 d-flex justify-content-md-start justify-content-center">
-                <div class="slider_container position-relative">
-                    <!-- Default Slide  -->
-
-                    <div id="0" class="__slider w-100 h-100 position-absolute top-0 active_slide">
-                        <div class="w-100 h-100 position-absolute top-0 img_gradient"></div>
-                        <img src="assects/img/1.jpg" class="w-100 h-100" alt="">
-                        <div dir="rtl" class="desc_container position-absolute bottom-0 end-0 px-3">
-                            <h1 class="">انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں، جملے ہوں، متن
-                                ہوں یا یہاں تک کہ آپ کی ویب سائٹ کے صفحات بھی بہترین
-                                پیش کریں گے۔</h1>
-                            <p class="text-white">02 August 2022</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 1  -->
-                    <div id="1" class="__slider w-100 h-100 position-absolute top-0 ">
-                        <div class="w-100 h-100 position-absolute top-0 img_gradient"></div>
-                        <img src="assects/img/1.jpg" class="w-100 h-100" alt="">
-                        <div dir="rtl" class="desc_container position-absolute bottom-0 end-0 px-3">
-                            <h1 class="">انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوئٹ کے صفحات بھی بہترین
-                                پیش کریں گے۔</h1>
-                            <p class="text-white">02 August 2023</p>
-                        </div>
-                    </div>
-                    <!-- Slide 2  -->
-                    <div id="2" class="__slider w-100 h-100 position-absolute top-0 ">
-                        <div class="w-100 h-100 position-absolute top-0 img_gradient"></div>
-                        <img src="assects/img/1.jpg" class="w-100 h-100" alt="">
-                        <div dir="rtl" class="desc_container position-absolute bottom-0 end-0 px-3">
-                            <h1 class="">انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوئٹ کے صفحات بھی بہترین
-                                پیش کریں گے۔</h1>
-                            <p class="text-white">02 August 2024</p>
-                        </div>
-                    </div>
-                    <!-- Slide 3  -->
-                    <div id="3" class="__slider w-100 h-100 position-absolute top-0 ">
-                        <div class="w-100 h-100 position-absolute top-0 img_gradient"></div>
-                        <img src="assects/img/1.jpg" class="w-100 h-100" alt="">
-                        <div dir="rtl" class="desc_container position-absolute bottom-0 end-0 px-3">
-                            <h1 class="">انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوئٹ کے صفحات بھی بہترین
-                                پیش کریں گے۔</h1>
-                            <p class="text-white">02 August 2025</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <!-- slider end  -->
-        </div>
-        <div class="row d-md-none d-flex">
-            <div class="col-sm-6 ps-sm-3 pe-sm-0 position-relative">
-                <div class="slider_child w-100 position-relative">
-                    <div class="transition w-100 h-100 position-absolute"></div>
-                    <img src="assects/img/2.jpg" alt="">
-                    <h6 class="position-absolute">گریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں</h6>
-                    <p>02 August 2022</p>
-                </div>
-
-            </div>
-            <div class="col-sm-6 ps-sm-0 pe-sm-4">
-                <div class="slider_child w-100 position-relative">
-                    <div class="transition w-100 h-100 position-absolute"></div>
-                    <img src="assects/img/2.jpg" alt="">
-                    <h6 class="position-absolute">گریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں</h6>
-                    <p>02 August 2022</p>
+<!-- hero section  -->
+<div class="container-fluid hero_section my-5">
+    <div class="row">
+        <div class="col-md-4 d-md-block d-none">
+            <div class="contaienr-fluid">
+                <div class="row sliderChild">
                 </div>
             </div>
         </div>
-
+        <!-- slider  -->
+        <div class="col-md-8 ps-md-0 ps-2 d-flex justify-content-md-start justify-content-center">
+            <div class="slider_container position-relative">
+            </div>
+        </div>
+        <!-- slider end  -->
     </div>
-    <!-- hero section end -->
-
-    <section>
-        <div class="container-fluid px-md-5 px-4 pt-5">
-            <div class="row mb-5">
-                <div class="col">
-                    <h3 class="text-end">خبریں</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4 d-md-block d-none latest_news">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col">
-                                <h4 class="text-center mb-3">- &#x6a9;&#x6be;&#x6cc;&#x644; -</h4>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col category position-relative p-0"> <img src="assects/img/1.jpg" alt="">
-                                <div
-                                    class="transition position-absolute w-100 h-100 top-0 d-flex justify-content-center align-items-end">
-                                    <p class="text-center text-white">ہاں تک کہ آپ کی ویب سائٹ کے صفحات بھی بہترین پیش
-                                        کریں گے</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col category position-relative p-0"> <img src="assects/img/1.jpg" alt="">
-                                <div
-                                    class="transition position-absolute w-100 h-100 top-0 d-flex justify-content-center align-items-end">
-                                    <p class="text-center text-white">ہاں تک کہ آپ کی ویب سائٹ کے صفحات بھی بہترین پیش
-                                        کریں گے</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col category position-relative p-0"> <img src="assects/img/1.jpg" alt="">
-                                <div
-                                    class="transition position-absolute w-100 h-100 top-0 d-flex justify-content-center align-items-end">
-                                    <p class="text-center text-white">ہاں تک کہ آپ کی ویب سائٹ کے صفحات بھی بہترین پیش
-                                        کریں گے</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <h4 class="text-center mb-3">- &#x6a9;&#x6be;&#x6cc;&#x644; -</h4>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col category position-relative p-0"> <img src="assects/img/1.jpg" alt="">
-                                <div
-                                    class="transition position-absolute w-100 h-100 top-0 d-flex justify-content-center align-items-end">
-                                    <p class="text-center text-white">ہاں تک کہ آپ کی ویب سائٹ کے صفحات بھی بہترین پیش
-                                        کریں گے</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col category position-relative p-0"> <img src="assects/img/1.jpg" alt="">
-                                <div
-                                    class="transition position-absolute w-100 h-100 top-0 d-flex justify-content-center align-items-end">
-                                    <p class="text-center text-white">ہاں تک کہ آپ کی ویب سائٹ کے صفحات بھی بہترین پیش
-                                        کریں گے</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col category position-relative p-0"> <img src="assects/img/1.jpg" alt="">
-                                <div
-                                    class="transition position-absolute w-100 h-100 top-0 d-flex justify-content-center align-items-end">
-                                    <p class="text-center text-white">ہاں تک کہ آپ کی ویب سائٹ کے صفحات بھی بہترین پیش
-                                        کریں گے</p>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-8 news_feed">
-                    <div class="content">
-                        <h3>انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں، جملے ہوں، متن ہوں یا یہاں تک کہ آپ کی ویب
-                            سائٹ کے صفحات بھی بہترین
-                            پیش کریں گے۔</h3>
-                        <p>انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں، جملے ہوں، متن ہوں یا یہاں تک کہ آپ کی ویب
-                            سائٹ کے صفحات بھی بہترین
-                            پیش کریں گے۔انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں، جملے ہوں، متن ہوں یا یہاں تک
-                            کہ آپ کی ویب سائٹ کے صفحات بھی بہترین
-                            پیش کریں گے۔</p>
-                        <p>August 02 2022</p>
-                    </div>
-                    <div class="thumbnail mb-5">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3 class="">انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں، جملے ہوں، متن ہوں یا یہاں تک
-                            کہ آپ کی ویب
-                            سائٹ کے صفحات بھی بہترین
-                            پیش کریں گے۔</h3>
-                        <p>انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں، جملے ہوں، متن ہوں یا یہاں تک کہ آپ کی ویب
-                            سائٹ کے صفحات بھی بہترین
-                            پیش کریں گے۔انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں، جملے ہوں، متن ہوں یا یہاں تک
-                            کہ آپ کی ویب سائٹ کے صفحات بھی بہترین
-                            پیش کریں گے۔</p>
-                        <p>August 02 2022</p>
-                    </div>
-                    <div class="thumbnail mb-5">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں، جملے ہوں، متن ہوں یا یہاں تک کہ آپ کی ویب
-                            سائٹ کے صفحات بھی بہترین
-                            پیش کریں گے۔</h3>
-                        <p>انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں، جملے ہوں، متن ہوں یا یہاں تک کہ آپ کی ویب
-                            سائٹ کے صفحات بھی بہترین
-                            پیش کریں گے۔انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں، جملے ہوں، متن ہوں یا یہاں تک
-                            کہ آپ کی ویب سائٹ کے صفحات بھی بہترین
-                            پیش کریں گے۔</p>
-                        <p>August 02 2022</p>
-                    </div>
-                    <div class="thumbnail mb-5">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں، جملے ہوں، متن ہوں یا یہاں تک کہ آپ کی ویب
-                            سائٹ کے صفحات بھی بہترین
-                            پیش کریں گے۔</h3>
-                        <p>انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں، جملے ہوں، متن ہوں یا یہاں تک کہ آپ کی ویب
-                            سائٹ کے صفحات بھی بہترین
-                            پیش کریں گے۔انگریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں، جملے ہوں، متن ہوں یا یہاں تک
-                            کہ آپ کی ویب سائٹ کے صفحات بھی بہترین
-                            پیش کریں گے۔</p>
-                        <p>August 02 2022</p>
-                    </div>
-                    <div class="thumbnail mb-5">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-
-
-                </div>
+    <div class="row d-md-none d-flex">
+        <div class="col-sm-6 ps-sm-3 pe-sm-0 position-relative">
+            <div class="slider_child w-100 position-relative">
+                <div class="transition w-100 h-100 position-absolute"></div>
+                <img src="assects/img/2.jpg" alt="">
+                <h6 class="position-absolute">گریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں</h6>
+                <p>02 August 2022</p>
             </div>
 
-            <div class="row d-md-none d-flex">
-                <div class="col">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col">
-                                <h4 class="text-center mb-3">- &#x6a9;&#x6be;&#x6cc;&#x644; -</h4>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col category position-relative p-0"> <img src="assects/img/1.jpg" alt="">
-                                <div
-                                    class="transition position-absolute w-100 h-100 top-0 d-flex justify-content-center align-items-end">
-                                    <p class="text-center text-white">ہاں تک کہ آپ کی ویب سائٹ کے صفحات بھی بہترین پیش
-                                        کریں گے</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col category position-relative p-0"> <img src="assects/img/1.jpg" alt="">
-                                <div
-                                    class="transition position-absolute w-100 h-100 top-0 d-flex justify-content-center align-items-end">
-                                    <p class="text-center text-white">ہاں تک کہ آپ کی ویب سائٹ کے صفحات بھی بہترین پیش
-                                        کریں گے</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col category position-relative p-0"> <img src="assects/img/1.jpg" alt="">
-                                <div
-                                    class="transition position-absolute w-100 h-100 top-0 d-flex justify-content-center align-items-end">
-                                    <p class="text-center text-white">ہاں تک کہ آپ کی ویب سائٹ کے صفحات بھی بہترین پیش
-                                        کریں گے</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <h4 class="text-center mb-3">- &#x6a9;&#x6be;&#x6cc;&#x644; -</h4>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col category position-relative p-0"> <img src="assects/img/1.jpg" alt="">
-                                <div
-                                    class="transition position-absolute w-100 h-100 top-0 d-flex justify-content-center align-items-end">
-                                    <p class="text-center text-white">ہاں تک کہ آپ کی ویب سائٹ کے صفحات بھی بہترین پیش
-                                        کریں گے</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col category position-relative p-0"> <img src="assects/img/1.jpg" alt="">
-                                <div
-                                    class="transition position-absolute w-100 h-100 top-0 d-flex justify-content-center align-items-end">
-                                    <p class="text-center text-white">ہاں تک کہ آپ کی ویب سائٹ کے صفحات بھی بہترین پیش
-                                        کریں گے</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col category position-relative p-0"> <img src="assects/img/1.jpg" alt="">
-                                <div
-                                    class="transition position-absolute w-100 h-100 top-0 d-flex justify-content-center align-items-end">
-                                    <p class="text-center text-white">ہاں تک کہ آپ کی ویب سائٹ کے صفحات بھی بہترین پیش
-                                        کریں گے</p>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+        </div>
+        <div class="col-sm-6 ps-sm-0 pe-sm-4">
+            <div class="slider_child w-100 position-relative">
+                <div class="transition w-100 h-100 position-absolute"></div>
+                <img src="assects/img/2.jpg" alt="">
+                <h6 class="position-absolute">گریزی سے اردو میں ترجمہ کریں۔ چاہے وہ الفاظ ہوں</h6>
+                <p>02 August 2022</p>
             </div>
-            <div class="row mt-5 mb-3">
-                <div class="col">
-                    <h1 class="text-end">
-                        &#x645;&#x62a;&#x639;&#x644;&#x642;&#x6c1;&#x20;&#x62e;&#x628;&#x631;&#x6cc;&#x6ba;</h1>
-                </div>
+        </div>
+    </div>
+
+</div>
+<!-- hero section end -->
+
+<section>
+    <div class="container-fluid px-md-5 px-4 pt-5">
+        <div class="row mb-5">
+            <div class="col">
+                <h3 class="text-end" style="font-family: 'Noto Nastaliq Urdu';font-size: 2rem;">خبریں</h3>
             </div>
-            <div class="row related_news">
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p class="mt-3 text-end">
-                        &#x6cc;&#x6c1;&#x627;&#x6ba;&#x20;&#x62a;&#x6a9;&#x20;&#x6a9;&#x6c1;&#x20;&#x622;&#x67e;&#x20;&#x6a9;&#x6cc;&#x20;&#x648;&#x6cc;&#x628;&#x20;&#x633;&#x627;&#x626;&#x679;&#x20;&#x6a9;&#x6d2;&#x20;&#x635;&#x641;&#x62d;&#x627;&#x62a;&#x20;&#x628;&#x6be;&#x6cc;&#x20;&#x628;&#x6c1;&#x62a;&#x631;&#x6cc;&#x646;&#x20;&#x67e;&#x6cc;&#x634;&#x20;&#x6a9;&#x631;&#x6cc;&#x6ba;&#x20;&#x6af;&#x6d2;
-                    </p>
-                </div>
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p class="mt-3 text-end">
-                        &#x6cc;&#x6c1;&#x627;&#x6ba;&#x20;&#x62a;&#x6a9;&#x20;&#x6a9;&#x6c1;&#x20;&#x622;&#x67e;&#x20;&#x6a9;&#x6cc;&#x20;&#x648;&#x6cc;&#x628;&#x20;&#x633;&#x627;&#x626;&#x679;&#x20;&#x6a9;&#x6d2;&#x20;&#x635;&#x641;&#x62d;&#x627;&#x62a;&#x20;&#x628;&#x6be;&#x6cc;&#x20;&#x628;&#x6c1;&#x62a;&#x631;&#x6cc;&#x646;&#x20;&#x67e;&#x6cc;&#x634;&#x20;&#x6a9;&#x631;&#x6cc;&#x6ba;&#x20;&#x6af;&#x6d2;
-                    </p>
-                </div>
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p class="mt-3 text-end">
-                        &#x6cc;&#x6c1;&#x627;&#x6ba;&#x20;&#x62a;&#x6a9;&#x20;&#x6a9;&#x6c1;&#x20;&#x622;&#x67e;&#x20;&#x6a9;&#x6cc;&#x20;&#x648;&#x6cc;&#x628;&#x20;&#x633;&#x627;&#x626;&#x679;&#x20;&#x6a9;&#x6d2;&#x20;&#x635;&#x641;&#x62d;&#x627;&#x62a;&#x20;&#x628;&#x6be;&#x6cc;&#x20;&#x628;&#x6c1;&#x62a;&#x631;&#x6cc;&#x646;&#x20;&#x67e;&#x6cc;&#x634;&#x20;&#x6a9;&#x631;&#x6cc;&#x6ba;&#x20;&#x6af;&#x6d2;
-                    </p>
-                </div>
-                <div class="col-md-3 col-sm-6 mb-3">
-                    <div class="imgBox rounded shadow">
-                        <img src="assects/img/1.jpg" alt="">
-                    </div>
-                    <p class="mt-3 text-end">
-                        &#x6cc;&#x6c1;&#x627;&#x6ba;&#x20;&#x62a;&#x6a9;&#x20;&#x6a9;&#x6c1;&#x20;&#x622;&#x67e;&#x20;&#x6a9;&#x6cc;&#x20;&#x648;&#x6cc;&#x628;&#x20;&#x633;&#x627;&#x626;&#x679;&#x20;&#x6a9;&#x6d2;&#x20;&#x635;&#x641;&#x62d;&#x627;&#x62a;&#x20;&#x628;&#x6be;&#x6cc;&#x20;&#x628;&#x6c1;&#x62a;&#x631;&#x6cc;&#x646;&#x20;&#x67e;&#x6cc;&#x634;&#x20;&#x6a9;&#x631;&#x6cc;&#x6ba;&#x20;&#x6af;&#x6d2;
-                    </p>
-                </div>
+        </div>
+        <div class=" row">
+            <!-- Category Section  -->
+            <?php include "components/categories.php"; ?>
+            <!-- Category Section ends  -->
+            <div class="col-md-8 news_feed">
 
             </div>
         </div>
-    </section>
 
-    <!-- Footer  -->
-    <?php require_once "components/footer.php"; ?>
-    <!-- Footer end -->
-    <script>
+        <!-- Category Responive Mode Section  -->
+        <?php include "components/resp-categories.php"; ?>
+        <!-- Category Responive Mode Section  ends -->
 
-    </script>
-    <script src="assects/Js/jquery.js"></script>
-    <script>
+
+        <div class="row mt-5 mb-3">
+            <div class="col">
+                <h1 class="text-end" style="font-family: 'Noto Nastaliq Urdu';font-size: 2rem;">
+                    &#x645;&#x62a;&#x639;&#x644;&#x642;&#x6c1;&#x20;&#x62e;&#x628;&#x631;&#x6cc;&#x6ba;</h1>
+            </div>
+        </div>
+        <div dir="rtl" class="row mt-5 related_news">
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer  -->
+<?php require_once "components/footer.php"; ?>
+<!-- Footer end -->
+<script>
+const baseURL = "http://localhost:81/uwn"
+</script>
+<script src="assects/Js/jquery.js"></script>
+<script>
+let sliderContainer = document.getElementsByClassName('slider_container')[0];
+let relatedNews = document.getElementsByClassName('related_news')[0];
+let newsFeed = document.getElementsByClassName('news_feed')[0];
+let sliderChild = document.getElementsByClassName('sliderChild')[0];
+
+(async function() {
+    const req = await fetch(`${baseURL}/server/api/home.php`);
+    const resp = await req.json();
+    if (resp.status == 1) {
+        sliderContainer.innerHTML = "";
+        sliderChild.innerHTML = "";
+        relatedNews.innerHTML = "";
+        newsFeed.innerHTML = "";
+        let length = resp.record.length;
+        for (var i = 0; i < length; i++) {
+            if (i < 4) {
+                sliderContainer.innerHTML += `<div id="${i}" class="__slider w-100 h-100 position-absolute top-0 ">
+                       <a href="article.php?article=${resp.record[i].slug}&category=home">
+                        <div class="w-100 h-100 position-absolute top-0 img_gradient"></div>
+                        <img src="${resp.record[i].thumbnail}" class="w-100 h-100" alt="">
+                        <div dir="rtl" class="desc_container position-absolute bottom-0 end-0 px-3">
+                            <h1 class="">${resp.record[i].title}</h1>
+                            <p class="text-white">${resp.record[i].publishedAt}</p>
+                        </div>
+                        </a>
+                    </div>`
+            } else if (i > 3 && i < 6) {
+                sliderChild.innerHTML += `<div class="col-12 d-flex pe-0 justify-content-md-end">
+                        
+                            <div class="slider_child position-relative">
+                                <div class="transition w-100 h-100 position-absolute"></div>
+                                <img src="${resp.record[i].thumbnail}" alt="">
+                                   <a href="article.php?article=${resp.record[i].slug}&category=home">
+                                <h6 class="position-absolute">${resp.record[i].title}</h6>
+                                 </a>
+                                <p>${resp.record[i].publishedAt}</p>
+                            </div>
+                           
+                        </div>`
+            } else if (i > 6 && i < 14) {
+                newsFeed.innerHTML += `<div class="content">
+                    <a href="article.php?article=${resp.record[i].slug}&category=home">
+                        <h3>${resp.record[i].title}</h3>
+                         </a>
+                        <p class="sdesc">${resp.record[i].shortDesc}</p>
+                        <p class="date">${resp.record[i].publishedAt}</p>
+                    </div>
+                    <div class="thumbnail mb-5">
+                        <img src="${resp.record[i].thumbnail}" alt="">
+                    </div>`
+            } else if (i > 13 && i < 18) {
+                relatedNews.innerHTML += `<div class="col-md-3 col-sm-6 mb-3">
+                    <div class="imgBox rounded shadow">
+                        <img src="${resp.record[i].thumbnail}" alt="">
+                    </div>
+                   <a href="article.php?article=${resp.record[i].slug}&category=home">
+                    <p class="mt-3 title text-end">
+                        ${resp.record[i].title}
+                    </p>
+                    </a>
+                </div>`
+            }
+        }
+    }
+
     let children = $(".slider_container").children().length;
     count = -1;
+    $(document.getElementById(count = count + 1)).addClass('active_slide').siblings().removeClass(
+        'active_slide')
     setInterval(() => {
-        console.log(`object`);
         if (children > 1) {
-            count = (count == children - 1) ? 1 : count = count + 1;
-            $(document.getElementById(count)).addClass('active_slide').siblings().removeClass('active_slide')
+            count = (count == children - 1) ? 0 : count = count + 1;
+            $(document.getElementById(count)).addClass('active_slide').siblings().removeClass(
+                'active_slide')
         }
-    }, 3000);
-    </script>
+    }, 5000);
+}());
+</script>
 </body>
 
 
